@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanesa Vasquez — UX/UI Designer CV</title>
+<style>
+/* ═══════════════════════════════════════════
+   FONT FACE — Chillax Variable
+   ═══════════════════════════════════════════ */
+@font-face {
+  font-family: 'Chillax';
+  src: url('../../design-system/fonts/Chillax-Variable.woff2') format('woff2'),
+       url('../../design-system/fonts/Chillax-Variable.woff') format('woff');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  /* Default Palette: Botanical Calm (Minimalist, organic) */
+  --color-bg: #F5F0E8;
+  --color-surface: #FDFCF8;
+  --color-primary: #5C7050;
+  --color-secondary: #C8B99A;
+  --color-text: #2C2C2C;
+  --color-text-muted: #6B6B5F;
+  --color-border: #D8D0C2;
+
+  --font: 'Chillax', sans-serif;
+  --sp-2xs: 4px; --sp-xs: 8px; --sp-sm: 12px; --sp-md: 20px;
+  --sp-lg: 32px; --sp-xl: 52px; --sp-2xl: 84px; --sp-3xl: 136px;
+  --r-md: 8px; --r-full: 9999px;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: var(--sp-2xl) var(--sp-lg);
+}
+a { color: var(--color-primary); text-decoration: none; transition: color .3s var(--ease); }
+a:hover { color: var(--color-text); }
+
+/* Layout */
+.cv-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  padding: var(--sp-2xl) var(--sp-3xl);
+  border-radius: var(--r-md);
+  box-shadow: 0 12px 32px rgba(0,0,0,.05);
+}
+
+/* Header */
+.header { margin-bottom: var(--sp-2xl); border-bottom: 1px solid var(--color-border); padding-bottom: var(--sp-xl); }
+.header__name { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: var(--sp-xs); }
+.header__role { font-size: 1.25rem; font-weight: 500; color: var(--color-text-muted); margin-bottom: var(--sp-lg); }
+.header__contact { display: flex; gap: var(--sp-md); flex-wrap: wrap; font-size: 0.85rem; font-weight: 500; }
+
+/* Sections */
+.section { margin-bottom: var(--sp-2xl); }
+.section__title { font-size: 1.5rem; font-weight: 600; margin-bottom: var(--sp-lg); letter-spacing: -0.02em; color: var(--color-primary); }
+.section__text { font-size: 1.125rem; font-weight: 300; line-height: 1.6; color: var(--color-text); }
+
+/* Items (Experience, Education) */
+.item { margin-bottom: var(--sp-xl); }
+.item:last-child { margin-bottom: 0; }
+.item__header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--sp-xs); flex-wrap: wrap; gap: var(--sp-sm); }
+.item__title { font-size: 1.125rem; font-weight: 600; }
+.item__meta { font-size: 0.85rem; color: var(--color-text-muted); font-weight: 500; }
+.item__desc { font-size: 1rem; color: var(--color-text-muted); margin-top: var(--sp-sm); }
+
+/* Tags */
+.tags { display: flex; gap: var(--sp-xs); flex-wrap: wrap; margin-top: var(--sp-md); }
+.tag { 
+  display: inline-block; padding: var(--sp-2xs) var(--sp-sm); 
+  border-radius: var(--r-full); font-size: 0.7rem; font-weight: 600; 
+  letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--color-bg); color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+@media(max-width: 600px) {
+  .cv-container { padding: var(--sp-xl) var(--sp-lg); }
+  .item__header { flex-direction: column; gap: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="cv-container">
+  
+  <header class="header">
+    <h1 class="header__name">Vanesa Vasquez</h1>
+    <div class="header__role">UX / UI Designer</div>
+    <div class="header__contact">
+      <a href="mailto:hola@vanesavasquez.com">hola@vanesavasquez.com</a>
+      <span>·</span>
+      <a href="#">LinkedIn</a>
+      <span>·</span>
+      <a href="#">Behance</a>
+      <span>·</span>
+      <span>Argentina</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section__title">Profile</h2>
+    <p class="section__text">
+      UX/UI Designer with a strong focus on user-centered methodologies. I transform complex problems into simple, organic, and accessible digital experiences. Specialized in creating Design Systems, user research, and high-impact visual design. (Note: standard placeholder texts based on system tokens to visualize structure).
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Experience</h2>
+    
+    <div class="item">
+      <div class="item__header">
+        <div class="item__title">UX/UI Designer — Life Seguros</div>
+        <div class="item__meta">2024 – Present</div>
+      </div>
+      <p class="item__desc">Led the creation and documentation of the internal design system. Conducted UX Research sessions and usability tests for the core platform redesign, improving user satisfaction by 35%.</p>
+      <div class="tags">
+        <span class="tag">Design Systems</span>
+        <span class="tag">UX Research</span>
+        <span class="tag">Figma</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__title">Product Designer — Freelance</div>
+        <div class="item__meta">2022 – 2024</div>
+      </div>
+      <p class="item__desc">End-to-end design of mobile applications and e-commerce platforms (e.g. Little Planet). Close collaboration with development teams using precise handoffs and agile methodologies.</p>
+      <div class="tags">
+        <span class="tag">UI Design</span>
+        <span class="tag">Prototyping</span>
+        <span class="tag">Wireframing</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Education</h2>
+    <div class="item">
+      <div class="item__header">
+        <div class="item__title">UX/UI Design Diploma</div>
+        <div class="item__meta">Educational Institution</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item__header">
+        <div class="item__title">Graphic Design</div>
+        <div class="item__meta">University</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Skills</h2>
+    <div class="tags">
+      <span class="tag">Figma</span>
+      <span class="tag">Design Systems</span>
+      <span class="tag">User Testing</span>
+      <span class="tag">Wireframing</span>
+      <span class="tag">Prototyping</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">React Vanilla</span>
+      <span class="tag">Agile</span>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>

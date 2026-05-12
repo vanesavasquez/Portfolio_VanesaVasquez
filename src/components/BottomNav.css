@@ -1,0 +1,117 @@
+.bottom-nav {
+  position: fixed;
+  bottom: var(--sp-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-lg);
+  background: rgba(250, 245, 240, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--r-full);
+  padding: var(--sp-sm) var(--sp-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(166, 130, 109, 0.3);
+}
+
+.bottom-nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  transition: all var(--duration-fast) var(--ease);
+  padding: var(--sp-2xs) var(--sp-xs);
+  border-radius: var(--r-md);
+  position: relative;
+}
+
+.bottom-nav__link:hover {
+  color: var(--color-text);
+}
+
+.bottom-nav__link--active {
+  color: var(--color-primary);
+}
+
+.bottom-nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.bottom-nav__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.bottom-nav__label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* WhatsApp / Contact FAB */
+.fab-contact {
+  position: fixed;
+  bottom: var(--sp-lg);
+  right: var(--sp-lg);
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px rgba(242, 181, 68, 0.25);
+  transition: all var(--duration-normal) var(--ease);
+  text-decoration: none;
+  border: none;
+}
+
+.fab-contact:hover {
+  transform: scale(1.1) rotate(12deg);
+  box-shadow: 0 0 40px rgba(242, 181, 68, 0.4);
+  color: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .bottom-nav {
+    bottom: var(--sp-md);
+    gap: var(--sp-md);
+    padding: var(--sp-xs) var(--sp-md);
+  }
+
+  .bottom-nav__label {
+    font-size: 0.5rem;
+  }
+
+  .fab-contact {
+    bottom: var(--sp-md);
+    right: var(--sp-md);
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-nav {
+    gap: var(--sp-sm);
+    padding: var(--sp-xs) var(--sp-sm);
+  }
+}

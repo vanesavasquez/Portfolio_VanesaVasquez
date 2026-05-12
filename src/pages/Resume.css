@@ -1,0 +1,329 @@
+.resume__header {
+  padding: var(--sp-2xl) 0 var(--sp-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-lg);
+  flex-wrap: wrap;
+}
+
+.resume__header-left {
+  flex: 1;
+}
+
+.resume__name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--sp-xs);
+}
+
+.resume__roles {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: var(--sp-sm);
+  letter-spacing: 0.02em;
+}
+
+.resume__intro {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: var(--sp-lg);
+}
+
+.resume__download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-xs);
+}
+
+.resume__photo {
+  width: 120px;
+  height: 160px;
+  border-radius: var(--r-lg);
+  background: var(--color-surface);
+  border: 3px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.resume__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── CV Sections ── */
+.resume__section {
+  padding: var(--sp-xl) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.resume__section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: var(--sp-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.resume__section-title::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* ── Skills cards ── */
+.resume__skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-md);
+}
+
+.resume__skill-card {
+  padding: var(--sp-md);
+  border-radius: var(--r-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all var(--duration-fast) var(--ease);
+}
+
+.resume__skill-card:hover {
+  border-color: var(--color-primary);
+}
+
+.resume__skill-card--highlight {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.resume__skill-card--highlight .resume__skill-desc {
+  color: var(--color-bg);
+  opacity: 0.85;
+}
+
+.resume__skill-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: var(--sp-2xs);
+}
+
+.resume__skill-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Experience entries ── */
+.resume__entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xl);
+}
+
+.resume__entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--sp-lg);
+  align-items: start;
+}
+
+.resume__entry-period {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding-top: 4px;
+}
+
+.resume__entry-company {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.resume__entry-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--sp-xs);
+}
+
+.resume__entry-desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ── Education entries ── */
+.resume__edu-entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+}
+
+.resume__edu-entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--sp-lg);
+  align-items: start;
+}
+
+.resume__edu-year {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding-top: 4px;
+}
+
+.resume__edu-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.resume__edu-institution {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: var(--sp-2xs);
+}
+
+.resume__edu-desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+/* ── Certifications ── */
+.resume__cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.resume__cert-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-md);
+  align-items: center;
+}
+
+.resume__cert-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.resume__cert-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ── Languages ── */
+.resume__languages {
+  display: flex;
+  gap: var(--sp-xl);
+  flex-wrap: wrap;
+}
+
+.resume__language {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2xs);
+}
+
+.resume__language-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.resume__language-level {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* ── Footer bar ── */
+.resume__footer-bar {
+  padding: var(--sp-xl) 0;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+}
+
+.resume__contact-links {
+  display: flex;
+  gap: var(--sp-lg);
+}
+
+.resume__contact-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2xs);
+}
+
+.resume__contact-link:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .resume__header {
+    flex-direction: column;
+  }
+
+  .resume__entry {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xs);
+  }
+
+  .resume__edu-entry {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xs);
+  }
+
+  .resume__footer-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resume__contact-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
