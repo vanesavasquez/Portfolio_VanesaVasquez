@@ -14,6 +14,7 @@
 }
 
 .about__title {
+  font-family: var(--font-title);
   font-size: clamp(2rem, 8vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -22,8 +23,8 @@
 
 .about__desc {
   font-size: 1rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
+  font-weight: 400;
+  color: var(--color-text);
   line-height: 1.8;
   max-width: 500px;
 }
@@ -47,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   font-size: 0.85rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -98,6 +99,7 @@
 .about__skills-left {}
 
 .about__skills-title {
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -160,8 +162,8 @@
 .accordion__content {
   padding: 0 0 var(--sp-md);
   font-size: 0.9rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
+  font-weight: 400;
+  color: var(--color-text);
   line-height: 1.7;
 }
 
@@ -246,6 +248,7 @@
 }
 
 .about__education-title {
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.01em;

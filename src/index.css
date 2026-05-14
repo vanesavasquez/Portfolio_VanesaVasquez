@@ -133,7 +133,7 @@ button {
    LAYOUT UTILITIES
    ═══════════════════════════════════════════ */
 .container {
-  max-width: 1200px;
+  max-width: 1450px;
   margin: 0 auto;
   padding: 0 var(--sp-lg);
 }
@@ -179,6 +179,7 @@ button {
 }
 
 .section__title {
+  font-family: var(--font-title);
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -282,6 +283,7 @@ button {
 }
 
 .card__title {
+  font-family: var(--font-title);
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: var(--sp-2xs);

@@ -12,6 +12,7 @@
 }
 
 .resume__name {
+  font-family: var(--font-title);
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -28,9 +29,9 @@
 
 .resume__intro {
   font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
-  max-width: 600px;
+  font-weight: 400;
+  color: var(--color-text);
+  max-width: 800px;
   line-height: 1.7;
   margin-bottom: var(--sp-lg);
 }
@@ -42,15 +43,15 @@
 }
 
 .resume__photo {
-  width: 120px;
-  height: 160px;
+  width: clamp(150px, 25vw, 300px);
+  aspect-ratio: 3 / 4;
   border-radius: var(--r-lg);
   background: var(--color-surface);
   border: 3px solid var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   font-size: 0.65rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -71,6 +72,7 @@
 }
 
 .resume__section-title {
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -99,7 +101,7 @@
 .resume__skill-card {
   padding: var(--sp-md);
   border-radius: var(--r-lg);
-  background: var(--color-surface);
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   transition: all var(--duration-fast) var(--ease);
 }
@@ -127,9 +129,9 @@
 }
 
 .resume__skill-desc {
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text);
   line-height: 1.5;
   margin: 0;
 }
@@ -170,8 +172,8 @@
 
 .resume__entry-desc {
   font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
+  font-weight: 400;
+  color: var(--color-text);
   line-height: 1.7;
 }
 
@@ -211,8 +213,8 @@
 
 .resume__edu-desc {
   font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
+  font-weight: 400;
+  color: var(--color-text);
 }
 
 /* ── Certifications ── */

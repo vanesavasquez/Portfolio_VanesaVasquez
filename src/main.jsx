@@ -6,7 +6,6 @@ import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
 import ProjectDetail from './pages/ProjectDetail.jsx'
 import Experience from './pages/Experience.jsx'
-import About from './pages/About.jsx'
 import Resume from './pages/Resume.jsx'
 import NotFound from './pages/NotFound.jsx'
 import './index.css'
@@ -20,7 +19,6 @@ createRoot(document.getElementById('root')).render(
           <Route path="proyectos" element={<Projects />} />
           <Route path="proyectos/:slug" element={<ProjectDetail />} />
           <Route path="experiencia" element={<Experience />} />
-          <Route path="sobre-mi" element={<About />} />
           <Route path="resumen" element={<Resume />} />
           <Route path="*" element={<NotFound />} />
         </Route>

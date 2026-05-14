@@ -5,7 +5,6 @@ const navItems = [
   { to: '/', icon: '⌂', label: 'Inicio', end: true },
   { to: '/proyectos', icon: '⊞', label: 'Proyectos' },
   { to: '/experiencia', icon: '◈', label: 'Experiencia' },
-  { to: '/sobre-mi', icon: '⬡', label: 'Sobre Mí' },
   { to: '/resumen', icon: '⎙', label: 'CV' },
 ]
 

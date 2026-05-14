@@ -1,65 +1,112 @@
 import './Resume.css'
 
 const skills = [
-  { name: 'Figma', highlight: true, desc: 'Diseño de interfaces, prototipado avanzado y sistemas de diseño escalables.' },
-  { name: 'UX Research', highlight: true, desc: 'Investigación cualitativa y cuantitativa, entrevistas, testing de usabilidad.' },
-  { name: 'UI Design', highlight: true, desc: 'Interfaces visuales coherentes, accesibles y centradas en el usuario.' },
-  { name: 'Design Systems', highlight: false, desc: 'Creación y mantenimiento de bibliotecas de componentes reutilizables.' },
-  { name: 'Prototyping', highlight: false, desc: 'Prototipos de alta fidelidad para validación de flujos y conceptos.' },
-  { name: 'Wireframing', highlight: false, desc: 'Estructuras de baja fidelidad para definir arquitectura de información.' },
-  { name: 'Usability Testing', highlight: false, desc: 'Evaluación heurística y testing con usuarios reales.' },
-  { name: 'Adobe Creative Suite', highlight: false, desc: 'Photoshop, Illustrator y After Effects para assets visuales.' },
-  { name: 'HTML / CSS', highlight: false, desc: 'Implementación frontend de diseños responsivos y accesibles.' },
-  { name: 'React', highlight: false, desc: 'Desarrollo de componentes y prototipos funcionales en React.' },
-  { name: 'Webflow', highlight: false, desc: 'Construcción de sitios web sin código con animaciones avanzadas.' },
-  { name: 'Framer', highlight: false, desc: 'Prototipado interactivo con micro-interacciones complejas.' },
-  { name: 'After Effects', highlight: false, desc: 'Motion graphics y animaciones para productos digitales.' },
-  { name: 'Accesibilidad WCAG', highlight: false, desc: 'Cumplimiento de estándares de accesibilidad web.' },
+  { name: 'Diseño & Prototipado', highlight: false, desc: 'Figma (Avanzado: Variables, Auto-layout), FigJam, Miro, Adobe Creative Suite, UXcel, Framer, Canva.' },
+  { name: 'Investigación UX', highlight: false, desc: 'User Interviews, Usability Testing (Moderated/Unmoderated), Surveys, Card Sorting, Tree Testing, Desk Research. Useberry, Bullpark, SurveyMonkey, TypeForm, Google Forms. investigación Maze, Proto. Google Analytics y Clarity.' },
+  { name: 'Técnicas', highlight: false, desc: 'Sistemas de Diseño (Atomic Design), Arquitectura de la Información, perfiles de usuarios, Flujo de usuario, Sitemap, Flujo de navegación, Journey Map, Diseño de interacciones, Accesibilidad (WCAG), Metodologías Ágiles (Scrum/Jira), Heuristic Evaluation, Metodología mobile-first.' },
+  { name: 'Desarrollo', highlight: false, desc: 'HTML, CSS, Bootstrap, React, JS, PHP, SQL, WordPress, Shopify, SEO. Visual Studio Code, OpenCode, Antigravity, Android Studio para implementación de proyectos.' },
+  { name: 'Discovery y Research (IA)', highlight: false, desc: 'Análisis de documentación y evaluaciones heurísticas; creación de agentes de investigación, laboratorio y Test de usuarios con "Agentes". Pruebas de concepto en OpenCode.' },
+  { name: 'Prototipado y Desarrollo (IA)', highlight: false, desc: 'Asistencia en desarrollo web e integración en Figma con Claude Code; prototipado/laboratorio rápido de diseños con V0.' },
+  { name: 'UX Writing (IA)', highlight: false, desc: 'Generación de contenido y agentes de redacción utilizando Gemini (Gems) y ChatGPT.' },
 ]
 
 const experience = [
   {
-    period: 'Ene 2022 — Presente',
-    company: 'Studio Lumina',
-    role: 'Senior UI Designer',
+    period: 'Septiembre 2022 — Actualidad',
+    company: 'Laboratorios Bagó (Consultora Be Proactive/Tecnosoftware)',
+    role: 'Senior UX/UI Designer',
     description:
-      'Liderando el diseño de interfaces para plataformas SaaS de alta escala, enfocándome en sistemas de diseño modulares y experiencias de usuario fluidas.',
+      'Investigación mixta (cualitativa/cuantitativa), pruebas de usabilidad moderadas y no moderadas, entrevistas en profundidad. Análisis de comportamiento con Microsoft Clarity. Diseño integral en Figma para plataformas web y móvil del CRM comercial. Auditoría UI y migración de sistemas a Angular/Flutter. Colaboración con equipos de ingeniería. Documentación y sistematización de componentes.',
   },
   {
-    period: 'Mar 2019 — Dic 2021',
-    company: 'Nova Creative',
-    role: 'Product Designer',
+    period: 'Junio 2022 — Agosto 2022',
+    company: 'Disprofarma (Consultora Be Proactive)',
+    role: 'UX/UI Designer',
     description:
-      'Desarrollo de conceptos visuales y prototipado interactivo para clientes internacionales del sector fintech y e-commerce de lujo.',
+      'Rediseño de flujos transaccionales y seguimiento de pedidos en e-commerce B2B de alta complejidad logística. Simplificación de navegación y arquitectura de información para autogestión de clientes (farmacias y droguerías).',
   },
   {
-    period: 'Jul 2017 — Feb 2019',
-    company: 'Pixel Bloom',
-    role: 'Junior UI/UX Designer',
+    period: 'Enero 2019 — Junio 2022',
+    company: 'Consultora UX/UI & Frontend Developer (Freelance)',
+    role: 'UX/UI Designer & Frontend Developer',
     description:
-      'Primeros pasos en el mundo digital, colaborando en el rediseño de sitios web corporativos y creación de activos para redes sociales.',
+      'Diseño e implementación de tiendas online (WooCommerce/Tienda Nube) enfocadas en conversión. Ejecución completa del ciclo de vida: relevamiento, branding, desarrollo Frontend (HTML/CSS/JS) y lanzamiento. Clientes: Mapfre Seguros, Rubra Eventos, Hospital Italiano, Life Seguros, entre otros.',
   },
 ]
 
 const educationList = [
   {
-    year: '2021',
-    title: 'Máster en Diseño de Interacción',
-    institution: 'ESNE - Madrid, España',
-    description: 'Especialización en interfaces gestuales y diseño centrado en el humano.',
+    year: 'En curso',
+    title: 'Tecnicatura en Diseño de Apps Mobile',
+    institution: 'UNNOBA',
+    description: 'Trabajo final en desarrollo.',
   },
   {
-    year: '2018',
-    title: 'Grado en Comunicación Visual',
-    institution: 'Universidad de Buenos Aires',
-    description: 'Fundamentos estéticos, tipografía editorial y semiótica de la imagen.',
+    year: '2019',
+    title: 'Diplomatura en Programación Full Stack (React.js)',
+    institution: 'UTN FRBA',
+    description: '',
+  },
+  {
+    year: '2019',
+    title: 'Tecnicatura en Diseño Web',
+    institution: 'Universidad Nacional de San Luis',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Diseño de Producto y UX',
+    institution: 'Academia Platzi',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso de Pruebas de Usabilidad',
+    institution: 'Platzi',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso de Investigación de Usuarios: Estudios Prácticos',
+    institution: 'Platzi',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso de User Research: Técnicas para una Investigación Efectiva',
+    institution: 'Platzi',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso diseño centrado en el usuario',
+    institution: 'Platzi',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso de audiocápsulas de casos e historias',
+    institution: 'Platzi',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso de inglés (Nivel 7)',
+    institution: 'CUI, UBA',
+    description: '',
+  },
+  {
+    year: 'Certificación',
+    title: 'Curso Intensivo de inglés',
+    institution: 'CUI, UBA',
+    description: '',
   },
 ]
 
 function Resume() {
   return (
     <div className="resume page">
-      <div className="container container--narrow">
+      <div className="container">
         {/* ── Header ── */}
         <div className="resume__header">
           <div className="resume__header-left">
@@ -76,11 +123,11 @@ function Resume() {
               con equipo de ingeniería.
             </p>
             <a
-              href="/cv.pdf"
+              href="/docs/cv/CV_LedesmaVanesa_UXUIdesigner-2.pdf"
               className="btn btn--primary resume__download-btn"
               download
             >
-              ↓ Descargar CV en PDF
+              ↓ Descargar CV
             </a>
           </div>
 
@@ -154,7 +201,7 @@ function Resume() {
             </div>
             <div className="resume__language">
               <span className="resume__language-name">Inglés</span>
-              <span className="resume__language-level">Intermedio (B1)</span>
+              <span className="resume__language-level">Nivel 7 (CUI, UBA)</span>
             </div>
           </div>
         </section>
@@ -165,7 +212,7 @@ function Resume() {
             <a href="mailto:contacto@vanesavasquez.com" className="resume__contact-link">
               ✉ Email
             </a>
-            <a href="https://linkedin.com/" className="resume__contact-link" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/vanesa-vasquez/" className="resume__contact-link" target="_blank" rel="noopener noreferrer">
               in LinkedIn
             </a>
             <a href="https://github.com/vanesavasquez" className="resume__contact-link" target="_blank" rel="noopener noreferrer">
@@ -173,11 +220,11 @@ function Resume() {
             </a>
           </div>
           <a
-            href="/cv.pdf"
+            href="/docs/cv/CV_LedesmaVanesa_UXUIdesigner-2.pdf"
             className="btn btn--outline btn--sm"
             download
           >
-            ↓ Descargar PDF
+            ↓ Descargar CV
           </a>
         </div>
       </div>

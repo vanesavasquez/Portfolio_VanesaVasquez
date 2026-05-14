@@ -16,6 +16,9 @@ dist-ssr
 .agents/
 skills-lock.json
 
+# Documentation folder
+docs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

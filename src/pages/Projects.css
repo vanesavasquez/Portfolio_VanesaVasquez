@@ -3,6 +3,7 @@
 }
 
 .projects__title {
+  font-family: var(--font-title);
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -18,7 +19,7 @@
 .projects__subtitle {
   font-size: 0.85rem;
   font-weight: 400;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   max-width: 500px;
@@ -88,7 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -127,6 +128,7 @@
 }
 
 .project-card__title {
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: var(--sp-xs);
@@ -134,14 +136,15 @@
 }
 
 .project-card--feature .project-card__title {
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 700;
 }
 
 .project-card__desc {
   font-size: 0.85rem;
-  color: var(--color-text-muted);
-  font-weight: 300;
+  color: var(--color-text);
+  font-weight: 400;
   line-height: 1.6;
 }
 
