@@ -78,9 +78,67 @@ Usar tokens de `../AGENTS.md`:
 - Sin CI/CD, sin archivos .env, sin TypeScript
 - docs/ es un symlink a la carpeta docs/ de la raíz
 
+## Workflow de Animaciones con HyperFrames
+
+### Propósito
+HyperFrames se usa como herramienta de **prototipado visual** para diseñar y validar animaciones antes de implementarlas en el código del sitio web.
+
+### Instalación
+```bash
+npm install -D hyperframes
+```
+
+### Estructura de archivos
+- `hyperframes/compositions/` — Archivos HTML de animaciones (`.hf.html`)
+- `hyperframes/assets/` — Recursos visuales para los videos
+- `hyperframes/output/` — Videos MP4 generados (no commitear, ya en .gitignore)
+- `src/animations/README.md` — Documentación de animaciones implementadas
+
+### Proceso de trabajo
+
+#### 1. Prototipar animación
+```bash
+# Crear composición HTML en hyperframes/compositions/
+# Usar design tokens del proyecto:
+# - Colores: var(--color-primary), var(--color-bg), etc.
+# - Fuentes: Against (títulos), Spinnaker (body)
+# - Espaciado: Fibonacci × 4px
+
+# Generar video
+npx hyperframes render hyperframes/compositions/[nombre].hf.html
+```
+
+#### 2. Revisar y aprobar
+- Ver video en `hyperframes/output/`
+- Validar timing, easing, estética
+- Iterar hasta satisfacción
+
+#### 3. Implementar en código
+- Traducir animación a CSS/JS para React
+- Aplicar al componente correspondiente
+- Documentar en `src/animations/README.md`
+
+### Convenciones de nombres
+```
+[seccion]-[elemento]-[tipo].hf.html
+
+Ejemplos:
+- home-hero-entrance.hf.html
+- projects-card-hover.hf.html
+- experience-timeline-stagger.hf.html
+- resume-skills-fadein.hf.html
+```
+
+### Reglas importantes
+- ✅ Usar design tokens del proyecto (colores, fuentes, espaciado)
+- ✅ Mantener accesibilidad AA (contraste, motion-reduce)
+- ✅ No commitear videos generados (agregado a .gitignore)
+- ✅ Documentar animaciones implementadas
+- ❌ No usar HyperFrames en producción (solo para prototipado)
+
 ## Cambios Recientes (Recent Changes)
 
-- **Home**: layout columna (foto arriba, texto abajo), badge "PRODUCT DESIGNER (UX)", sticky notes a la izquierda, nueva bio, sin botón CTA
+- **Home**: layout columna (foto arriba, texto abajo), badges neutrales "UX Designer" y "Web Developer", sticky notes a la izquierda, nueva bio con servicios destacados en negrita y CTA a WhatsApp, sin botón CTA, imagen hero `vane_ home_v4.jpeg`
 - **Projects**: sin subtítulo, sin chips de categoría, cards transparentes (`rgba(250,245,240,0.45)`), feature card usa Golden Yellow (`--color-primary`), las 5 imágenes de proyectos alineadas a la izquierda (`object-position: left center`)
 - **ProjectDetail**: bloques de texto sin `max-width` (ancho completo del contenedor), imágenes hero alineadas a la izquierda
 - **Resume**: foto de perfil real (`imagen-perfil-vanesa-vasquez-byn.png`), skill cards con descripciones, nivel de inglés Nivel 7 (CUI, UBA), sección de certificaciones removida, usa `.container` estándar (max-width: 1450px), skill cards con fondo cream y texto de alto contraste para accesibilidad AA, experiencias y educación actualizadas con datos reales del CV, botón de descarga apunta a `/docs/cv/CV_LedesmaVanesa_UXUIdesigner-2.pdf`, link de LinkedIn actualizado a `https://www.linkedin.com/in/vanesa-vasquez/`

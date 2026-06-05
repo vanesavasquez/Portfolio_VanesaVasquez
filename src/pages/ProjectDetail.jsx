@@ -128,7 +128,6 @@ function ProjectDetail() {
 
         {/* ── Header ── */}
         <div className="project-detail__header">
-          <div className="project-detail__logo">Logo</div>
           <div className="project-detail__info">
             <h1 className="project-detail__title">{project.title}</h1>
             <p className="project-detail__desc">{project.description}</p>

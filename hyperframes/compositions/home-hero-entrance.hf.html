@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Hero Entrance - Vane-Vas Portfolio</title>
+  <style>
+    /* ═══════════════════════════════════════════
+       DESIGN TOKENS (Vane-Vas Palette)
+       ═══════════════════════════════════════════ */
+    :root {
+      --color-bg: #FAF5F0;
+      --color-surface: #A9C6D9;
+      --color-surface-2: #A6826D;
+      --color-primary: #F2B544;
+      --color-secondary: #A6826D;
+      --color-accent: #73534C;
+      --color-text: #5A3E39;
+      --color-text-muted: rgba(115, 83, 76, 0.7);
+      --color-border: #A6826D;
+      
+      --font-title: 'Against', sans-serif;
+      --font-body: 'Spinnaker', sans-serif;
+      
+      --sp-2xs: 4px;
+      --sp-xs: 8px;
+      --sp-sm: 12px;
+      --sp-md: 20px;
+      --sp-lg: 32px;
+      --sp-xl: 52px;
+      --sp-2xl: 84px;
+      
+      --r-lg: 12px;
+      --r-xl: 20px;
+      --r-2xl: 32px;
+      
+      --shadow-lg: 0 12px 32px rgba(90, 62, 57, 0.2);
+      --shadow-xl: 0 20px 52px rgba(90, 62, 57, 0.24);
+    }
+
+    /* ═══════════════════════════════════════════
+       BASE STYLES
+       ═══════════════════════════════════════════ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: radial-gradient(circle, rgba(166, 130, 109, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* ═══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      background: rgba(250, 245, 240, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(166, 130, 109, 0.15);
+      z-index: 100;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out 0.1s forwards;
+    }
+
+    .navbar__brand {
+      font-family: var(--font-title);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--color-text);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO LAYOUT
+       ═══════════════════════════════════════════ */
+    .hero {
+      display: flex;
+      gap: var(--sp-2xl);
+      padding: var(--sp-xl);
+      padding-top: 100px;
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO LAYOUT
+       ═══════════════════════════════════════════ */
+    .hero {
+      display: flex;
+      gap: var(--sp-2xl);
+      padding: var(--sp-xl);
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    .hero__content {
+      flex: 0 0 40%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-lg);
+    }
+
+    .hero__visual {
+      flex: 0 0 60%;
+      position: relative;
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS - Badges
+       ═══════════════════════════════════════════ */
+    .hero__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-sm);
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2xs);
+      padding: var(--sp-2xs) var(--sp-sm);
+      border-radius: var(--r-md);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS - Title (Handwriting Effect)
+       ═══════════════════════════════════════════ */
+    .hero__title {
+      font-family: var(--font-title);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .hero__title .word {
+      display: inline-block;
+    }
+
+    .hero__title .letter {
+      display: inline-block;
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      transform: rotate(3deg) translateY(4px);
+      animation: handwrite 0.25s steps(1, end) forwards,
+                 settle 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  color 0.3s ease;
+    }
+
+    .hero__title .letter:hover {
+      transform: rotate(var(--tilt, 0deg)) translateY(-6px) scale(1.08);
+    }
+
+    .hero__title .word:last-child .letter:hover {
+      color: #e6a030;
+    }
+
+    .hero__title .word:last-child .letter {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+
+    /* Stagger delays for "Vanesa" — fast, like real handwriting */
+    .hero__title .word:first-child .letter:nth-child(1) { animation-delay: 0.5s, 0.5s; }
+    .hero__title .word:first-child .letter:nth-child(2) { animation-delay: 0.62s, 0.62s; }
+    .hero__title .word:first-child .letter:nth-child(3) { animation-delay: 0.73s, 0.73s; }
+    .hero__title .word:first-child .letter:nth-child(4) { animation-delay: 0.85s, 0.85s; }
+    .hero__title .word:first-child .letter:nth-child(5) { animation-delay: 0.96s, 0.96s; }
+    .hero__title .word:first-child .letter:nth-child(6) { animation-delay: 1.08s, 1.08s; }
+
+    /* Stagger delays for "Vasquez" — pause between words */
+    .hero__title .word:last-child .letter:nth-child(1) { animation-delay: 1.35s, 1.35s; }
+    .hero__title .word:last-child .letter:nth-child(2) { animation-delay: 1.47s, 1.47s; }
+    .hero__title .word:last-child .letter:nth-child(3) { animation-delay: 1.58s, 1.58s; }
+    .hero__title .word:last-child .letter:nth-child(4) { animation-delay: 1.7s, 1.7s; }
+    .hero__title .word:last-child .letter:nth-child(5) { animation-delay: 1.82s, 1.82s; }
+    .hero__title .word:last-child .letter:nth-child(6) { animation-delay: 1.93s, 1.93s; }
+    .hero__title .word:last-child .letter:nth-child(7) { animation-delay: 2.05s, 2.05s; }
+
+    /* Micro-rotations to simulate handwriting imperfection */
+    .hero__title .word:first-child .letter:nth-child(1) { --tilt: -2deg; }
+    .hero__title .word:first-child .letter:nth-child(2) { --tilt: 1deg; }
+    .hero__title .word:first-child .letter:nth-child(3) { --tilt: -1deg; }
+    .hero__title .word:first-child .letter:nth-child(4) { --tilt: 2deg; }
+    .hero__title .word:first-child .letter:nth-child(5) { --tilt: -1.5deg; }
+    .hero__title .word:first-child .letter:nth-child(6) { --tilt: 0.5deg; }
+
+    .hero__title .word:last-child .letter:nth-child(1) { --tilt: -1.5deg; }
+    .hero__title .word:last-child .letter:nth-child(2) { --tilt: 1.5deg; }
+    .hero__title .word:last-child .letter:nth-child(3) { --tilt: -0.5deg; }
+    .hero__title .word:last-child .letter:nth-child(4) { --tilt: 2deg; }
+    .hero__title .word:last-child .letter:nth-child(5) { --tilt: -1deg; }
+    .hero__title .word:last-child .letter:nth-child(6) { --tilt: 1deg; }
+    .hero__title .word:last-child .letter:nth-child(7) { --tilt: -2deg; }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS - Subtitle
+       ═══════════════════════════════════════════ */
+    .hero__subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 2.3s forwards;
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS - Photo (Ken Burns + Hover Zoom)
+       ═══════════════════════════════════════════ */
+    .hero__img-wrapper {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--r-2xl);
+      overflow: hidden;
+      background: var(--color-surface);
+      box-shadow: var(--shadow-xl);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: scaleIn 1.2s ease-out 0.5s forwards;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .hero__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: var(--color-surface-2);
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      animation: kenBurns 20s ease-in-out 1.7s infinite alternate;
+    }
+
+    .hero__img-wrapper:hover .hero__img {
+      transform: scale(1.08);
+      animation-play-state: paused;
+    }
+
+    .hero__img-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--r-2xl);
+      background: linear-gradient(135deg, rgba(242, 181, 68, 0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+
+    .hero__img-wrapper:hover::after {
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS - Sticky Notes
+       ═══════════════════════════════════════════ */
+    .sticky-note {
+      width: 180px;
+      padding: var(--sp-md);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-xl);
+      opacity: 0;
+      cursor: pointer;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  filter 0.5s ease;
+    }
+
+    .sticky-note:hover {
+      transform: translateY(-8px) rotate(0deg) scale(1.05) !important;
+      box-shadow: 0 28px 60px rgba(90, 62, 57, 0.32);
+      filter: brightness(1.05);
+      z-index: 10;
+    }
+
+    .sticky-note:active {
+      transform: translateY(-4px) rotate(0deg) scale(1.02) !important;
+      transition-duration: 0.15s;
+    }
+
+    .hero__notes .sticky-note:nth-child(1) {
+      background: #feb300;
+      color: #382400;
+      transform: rotate(-3deg) translateY(20px);
+      animation: noteIn 0.8s ease-out 2.6s forwards;
+    }
+
+    .hero__notes .sticky-note:nth-child(2) {
+      background: #ebdcff;
+      color: #330071;
+      transform: rotate(2deg) translateY(20px);
+      animation: noteIn 0.8s ease-out 2.8s forwards;
+    }
+
+    .hero__notes .sticky-note:nth-child(3) {
+      background: #ff9bbc;
+      color: #470123;
+      transform: rotate(-1deg) translateY(20px);
+      animation: noteIn 0.8s ease-out 3.0s forwards;
+    }
+
+    .sticky-note__text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .sticky-note__pin {
+      text-align: right;
+      margin-top: var(--sp-sm);
+      font-size: 0.75rem;
+      opacity: 0.3;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO NOTES CONTAINER
+       ═══════════════════════════════════════════ */
+    .hero__notes {
+      position: absolute;
+      right: -30px;
+      top: 5%;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-md);
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO DESCRIPTION
+       ══════════════════════════════════════════ */
+    .hero__description {
+      margin-top: var(--sp-2xl);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__description .hero__subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      text-align: justify;
+      hyphens: auto;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 3.0s forwards;
+    }
+
+    .hero__description .hero__subtitle strong {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    /* ═══════════════════════════════════════════
+       FIGMA HANDLES
+       ═══════════════════════════════════════════ */
+    .hero__handle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border: 2px solid var(--color-primary);
+      background: var(--color-bg);
+      z-index: 3;
+      opacity: 0;
+      animation: fadeIn 0.4s ease-out 1.5s forwards;
+    }
+
+    .hero__handle--tl { top: -4px; left: -4px; }
+    .hero__handle--tr { top: -4px; right: -4px; }
+    .hero__handle--bl { bottom: -4px; left: -4px; }
+    .hero__handle--br { bottom: -4px; right: -4px; }
+
+    /* ═══════════════════════════════════════════
+       WHATSAPP FAB
+       ═══════════════════════════════════════════ */
+    .fab-whatsapp {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(242, 181, 68, 0.3);
+      z-index: 100;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fabIn 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 3.5s forwards;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .fab-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(242, 181, 68, 0.4);
+    }
+
+    @keyframes fabIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       BOTTOM NAV (Floating Menu)
+       ══════════════════════════════════════════ */
+    .bottom-nav {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: rgba(250, 245, 240, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 40px;
+      border: 1px solid rgba(166, 130, 109, 0.2);
+      box-shadow: 0 8px 32px rgba(90, 62, 57, 0.12),
+                  0 2px 8px rgba(90, 62, 57, 0.08);
+      opacity: 0;
+      animation: navSlideUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 3.2s forwards;
+      z-index: 100;
+    }
+
+    .bottom-nav__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 16px;
+      border-radius: 24px;
+      text-decoration: none;
+      color: var(--color-text-muted);
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+    }
+
+    .bottom-nav__link:hover {
+      color: var(--color-text);
+      background: rgba(169, 198, 217, 0.15);
+    }
+
+    .bottom-nav__link--active {
+      color: var(--color-primary);
+    }
+
+    .bottom-nav__link--active .bottom-nav__icon {
+      stroke: var(--color-primary);
+    }
+
+    .bottom-nav__dot {
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    .bottom-nav__icon {
+      transition: stroke 0.3s ease, transform 0.3s ease;
+    }
+
+    .bottom-nav__link:hover .bottom-nav__icon {
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════════
+       KEYFRAMES
+       ═══════════════════════════════════════════ */
+    @keyframes navSlideUp {
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes noteIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) rotate(0deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--rotation, 0deg));
+      }
+    }
+
+    @keyframes handwrite {
+      to {
+        opacity: 1;
+        clip-path: none;
+      }
+    }
+
+    @keyframes settle {
+      0% {
+        transform: rotate(3deg) translateY(4px);
+      }
+      100% {
+        transform: rotate(var(--tilt, 0deg)) translateY(0);
+      }
+    }
+
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      100% {
+        transform: scale(1.05) translate(-1%, -1%);
+      }
+    }
+
+    .sticky-note:nth-child(1) { --rotation: -3deg; }
+    .sticky-note:nth-child(2) { --rotation: 2deg; }
+    .sticky-note:nth-child(3) { --rotation: -1deg; }
+
+    /* ═══════════════════════════════════════════
+       PARALLAX LAYERS (for JS mouse tracking)
+       ═══════════════════════════════════════════ */
+    .hero__visual[data-parallax] {
+      will-change: transform;
+    }
+
+    .hero__visual .sticky-note {
+      will-change: transform;
+    }
+
+    /* Smooth cursor-following glow on visual area */
+    .hero__visual::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 181, 68, 0.08), transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      left: var(--mouse-x, 50%);
+      top: var(--mouse-y, 50%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 5;
+    }
+
+    .hero__visual:hover::before {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <span class="navbar__brand">VANESA L. VASQUEZ</span>
+  </nav>
+
+  <div class="hero">
+    <!-- Content Column (40%) -->
+    <div class="hero__content">
+      <div class="hero__badges">
+        <span class="hero__badge">UX Designer</span>
+        <span class="hero__badge">Web Developer</span>
+      </div>
+      
+      <h1 class="hero__title">
+        <span class="word"><span class="letter">V</span><span class="letter">a</span><span class="letter">n</span><span class="letter">e</span><span class="letter">s</span><span class="letter">a</span></span><br>
+        <span class="word"><span class="letter">V</span><span class="letter">a</span><span class="letter">s</span><span class="letter">q</span><span class="letter">u</span><span class="letter">e</span><span class="letter">z</span></span>
+      </h1>
+    </div>
+
+    <!-- Visual Column (60%) -->
+    <div class="hero__visual">
+      <div class="hero__img-wrapper">
+        <img
+          src="../public/images/vane_ home_v4.jpeg"
+          alt="Vanesa Vasquez"
+          class="hero__img"
+        />
+      </div>
+      <!-- Figma-style selection handles -->
+      <div class="hero__handle hero__handle--tl"></div>
+      <div class="hero__handle hero__handle--tr"></div>
+      <div class="hero__handle hero__handle--bl"></div>
+      <div class="hero__handle hero__handle--br"></div>
+      <!-- Sticky notes positioned over the photo -->
+      <div class="hero__notes">
+        <div class="sticky-note">
+          <div class="sticky-note__text">
+            Piensa más diseña menos
+          </div>
+          <div class="sticky-note__pin">📌</div>
+        </div>
+        
+        <div class="sticky-note">
+          <div class="sticky-note__text">
+            Simplifica y luego simplifica de nuevo
+          </div>
+          <div class="sticky-note__pin">📌</div>
+        </div>
+        
+        <div class="sticky-note">
+          <div class="sticky-note__text">
+            No tiene que ser perfecto mamá.
+          </div>
+          <div class="sticky-note__pin">📌</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Description below -->
+  <div class="hero__description" style="max-width: 1400px; margin: 0 auto; padding: 0 52px;">
+    <p class="hero__subtitle">
+      ¡Hola, mi nombre es Vane! 👋 y soy Diseñadora UX/UI con más de 4 años de experiencia en diseño digital y un fuerte enfoque en research, estrategia y visión de negocio. Cuento con un backup de 3 años de Diseñadora web y FrontEnd. Mi objetivo es crear productos digitales que funcionen para las personas y para los objetivos del negocio y mis clientes, combinando empatía, análisis y creatividad.
+    </p>
+    <p class="hero__subtitle">
+      Actualmente soy consultora freelancer para proyectos de <strong>Desarrollo web</strong>, <strong>diseño UX/UI</strong> y <strong>diseño de tiendas online</strong>. ¿Tienes algun proyecto en mente? <strong>Escribime por whatsapp.</strong>
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM NAV (Floating Menu)
+       ═══════════════════════════════════════════ -->
+  <nav class="bottom-nav" aria-label="Navegación principal">
+    <a href="#" class="bottom-nav__link bottom-nav__link--active" data-nav>
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1"/>
+      </svg>
+      <span class="bottom-nav__label">Inicio</span>
+      <span class="bottom-nav__dot"></span>
+    </a>
+    <a href="#" class="bottom-nav__link" data-nav>
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      <span class="bottom-nav__label">Proyectos</span>
+    </a>
+    <a href="#" class="bottom-nav__link" data-nav>
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+      <span class="bottom-nav__label">Experiencia</span>
+    </a>
+    <a href="#" class="bottom-nav__link" data-nav>
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/>
+        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+      </svg>
+      <span class="bottom-nav__label">CV</span>
+    </a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       WHATSAPP FAB
+       ═══════════════════════════════════════════ -->
+  <a
+    href="https://wa.me/542664214124"
+    class="fab-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    const visual = document.querySelector('.hero__visual');
+    const notes = document.querySelectorAll('.hero__notes .sticky-note');
+
+    visual.addEventListener('mousemove', (e) => {
+      const rect = visual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+
+      // Cursor glow position
+      visual.style.setProperty('--mouse-x', `${(x * 100)}%`);
+      visual.style.setProperty('--mouse-y', `${(y * 100)}%`);
+
+      // Parallax on sticky notes (different depths)
+      notes.forEach((note, i) => {
+        const depth = (i + 1) * 8;
+        const moveX = (x - 0.5) * depth;
+        const moveY = (y - 0.5) * depth;
+        note.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${note.style.getPropertyValue('--rotation') || 0}deg)`;
+      });
+    });
+
+    visual.addEventListener('mouseleave', () => {
+      notes.forEach((note) => {
+        note.style.transform = '';
+      });
+    });
+
+    // ═══════════════════════════════════════════
+    // BOTTOM NAV - Active state toggle
+    // ═══════════════════════════════════════════
+    const navLinks = document.querySelectorAll('.bottom-nav__link');
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navLinks.forEach((l) => {
+          l.classList.remove('bottom-nav__link--active');
+          const dot = l.querySelector('.bottom-nav__dot');
+          if (dot) dot.remove();
+        });
+        link.classList.add('bottom-nav__link--active');
+        const dot = document.createElement('span');
+        dot.className = 'bottom-nav__dot';
+        link.appendChild(dot);
+      });
+    });
+  </script>
+</body>
+</html>

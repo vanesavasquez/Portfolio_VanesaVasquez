@@ -4,7 +4,6 @@ import './Navbar.css'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [lang, setLang] = useState('ESP')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,23 +23,7 @@ function Navbar() {
       </Link>
 
       <div className="navbar__actions">
-        <div className="navbar__lang-toggle">
-          <button
-            className={`navbar__lang-btn${lang === 'ENG' ? ' navbar__lang-btn--active' : ''}`}
-            onClick={() => setLang('ENG')}
-          >
-            ENG
-          </button>
-          <button
-            className={`navbar__lang-btn${lang === 'ESP' ? ' navbar__lang-btn--active' : ''}`}
-            onClick={() => setLang('ESP')}
-          >
-            ESP
-          </button>
-        </div>
-        <span className="navbar__globe" role="img" aria-label="Idioma">
-          ⊕
-        </span>
+        {/* Language toggle and globe hidden */}
       </div>
     </header>
   )

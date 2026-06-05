@@ -8,8 +8,8 @@
   align-items: center;
   gap: var(--sp-lg);
   background: rgba(250, 245, 240, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: var(--r-full);
   padding: var(--sp-sm) var(--sp-lg);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);

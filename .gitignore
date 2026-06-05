@@ -19,6 +19,9 @@ skills-lock.json
 # Documentation folder
 docs/
 
+# HyperFrames output (generated videos)
+hyperframes/output/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
