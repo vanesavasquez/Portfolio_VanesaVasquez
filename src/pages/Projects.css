@@ -20,9 +20,8 @@
   font-size: 0.85rem;
   font-weight: 400;
   color: var(--color-text);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  max-width: 500px;
+  letter-spacing: 0.02em;
+  max-width: 650px;
   line-height: 1.8;
 }
 

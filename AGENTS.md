@@ -34,6 +34,7 @@
 - **Uso**: Importar `useLanguage` y `translations`, luego `const t = translations[lang]`
 - **Agregar idioma**: Solo agregar nueva key al objeto `translations` (ej: `fr`, `pt`)
 - **Regla**: NO duplicar páginas — usar un solo archivo JSX con traducciones dinámicas
+- **IMPORTANTE**: Al agregar cualquier texto nuevo al proyecto, SIEMPRE agregar la traducción correspondiente en inglés (nivel B1+) en `src/i18n/translations.js` dentro de la sección `en`. El inglés debe ser claro, profesional y apropiado para el contexto UX/UI.
 
 ### Design System (del sistema madre)
 Usar tokens de `../AGENTS.md`:

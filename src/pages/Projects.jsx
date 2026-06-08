@@ -30,6 +30,7 @@ function Projects() {
           <h1 className="projects__title">
             {t.projects.title}<span>.</span>
           </h1>
+          <p className="projects__subtitle">{t.projects.subtitle}</p>
         </div>
 
         {/* ── Bento Grid ── */}

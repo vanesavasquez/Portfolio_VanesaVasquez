@@ -18,6 +18,7 @@ export const translations = {
     },
     projects: {
       title: 'Proyectos',
+      subtitle: '¡Hola! Sigo sumando vistas y casos de estudio a este espacio. Resumir 7 años de trabajo lleva tiempo, especialmente porque la mayoría de los productos son de uso privado. Para cuidar la confianza de las empresas con las que colaboré, cada pantalla o detalle que comparto pasa por una rigurosa revisión para asegurar que no se exponga información sensible.',
       viewCase: 'Ver caso de estudio →',
       items: [
         {
@@ -263,6 +264,7 @@ export const translations = {
     },
     projects: {
       title: 'Projects',
+      subtitle: "Hi! I'm still adding views and case studies to this space. Summarizing 7 years of work takes time, especially since most products are for private use. To protect the trust of the companies I collaborated with, every screen or detail I share goes through a rigorous review to ensure no sensitive information is exposed.",
       viewCase: 'View case study →',
       items: [
         {
