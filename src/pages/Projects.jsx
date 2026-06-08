@@ -1,63 +1,34 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../hooks/useLanguage.js'
+import { translations } from '../i18n/translations.js'
 import './Projects.css'
 
-const projects = [
-  {
-    slug: 'fico-crm-mobile',
-    title: 'FiCo CRM - Mobile | Laboratorio Bagó',
-    category: 'Producto',
-    description:
-      'FiCo CRM Mobile es una solución móvil creada desde cero para optimizar el trabajo de campo. El proyecto nació para simplificar la carga administrativa, comenzando con Éticos y su éxito sumó más negocios y países.',
-    image: '/images/fico-crm-mobile.png',
-    size: 'large',
-  },
-  {
-    slug: 'fico-crm-web-eticos',
-    title: 'FiCo CRM Web (Éticos)',
-    category: 'Producto',
-    description:
-      'FiCo CRM Web es la plataforma de escritorio que centraliza la gestión y el seguimiento de la actividad administrativa y de clientes de la unidad de Éticos.',
-    image: '/images/fico-crm-web.png',
-    size: 'medium',
-  },
-  {
-    slug: 'sistema-de-diseno-bago',
-    title: 'Sistema de Diseño del Ecosistema Digital Laboratorios Bagó',
-    category: 'System design',
-    description:
-      'El Sistema de Diseño para los productos CRM de Laboratorios Bagó nació como una respuesta estratégica a la fragmentación visual y operativa entre las distintas plataformas y unidades de negocio.',
-    image: '/images/sistema-de-diseno.png',
-    size: 'feature',
-    isFeature: true,
-  },
-  {
-    slug: 'transfer-laboratorios-bago',
-    title: 'Transfer (Laboratorios Bagó)',
-    category: 'Rediseño UX',
-    description:
-      'El proyecto Transfer se centró en el rediseño del módulo de carga de productos dentro de una plataforma del CRM B2B optimizada para tablets.',
-    image: '/images/transfer.png',
-    size: 'wide',
-  },
-  {
-    slug: 'campus-bago',
-    title: 'Campus Bagó: Diseño de Capacitación Digital y Adopción para FiCo CRM',
-    category: 'Contenido Digital',
-    description:
-      'Lanzamiento de capacitaciones (mp4) dentro del campus de la empresa para asegurar una adopción fluida mediante una estrategia de onboarding y capacitación a gran escala. La serie completa incluye 12 videos.',
-    image: '/images/campus-bago.png',
-    size: 'square',
-  },
+const projectsMeta = [
+  { slug: 'fico-crm-mobile', image: '/images/fico-crm-mobile.png', size: 'large' },
+  { slug: 'fico-crm-web-eticos', image: '/images/fico-crm-web.png', size: 'medium' },
+  { slug: 'sistema-de-diseno-bago', image: '/images/sistema-de-diseno.png', size: 'feature', isFeature: true },
+  { slug: 'transfer-laboratorios-bago', image: '/images/transfer.png', size: 'wide' },
+  { slug: 'campus-bago', image: '/images/campus-bago.png', size: 'square' },
 ]
 
 function Projects() {
+  const { lang } = useLanguage()
+  const t = translations[lang]
+
+  const projects = t.projects.items.map((item, i) => ({
+    ...item,
+    image: projectsMeta[i].image,
+    size: projectsMeta[i].size,
+    isFeature: projectsMeta[i].isFeature || false,
+  }))
+
   return (
     <div className="projects page">
       <div className="container">
         {/* ── Header ── */}
         <div className="projects__header">
           <h1 className="projects__title">
-            Proyectos<span>.</span>
+            {t.projects.title}<span>.</span>
           </h1>
         </div>
 
@@ -82,7 +53,7 @@ function Projects() {
                 <h2 className="project-card__title">{project.title}</h2>
                 <p className="project-card__desc">{project.description}</p>
                 <span className="project-card__cta">
-                  Ver caso de estudio →
+                  {t.projects.viewCase}
                 </span>
               </div>
             </Link>

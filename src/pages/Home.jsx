@@ -1,8 +1,12 @@
 import { useRef, useEffect } from 'react'
+import { useLanguage } from '../hooks/useLanguage.js'
+import { translations } from '../i18n/translations.js'
 import './Home.css'
 
 function Home() {
   const visualRef = useRef(null)
+  const { lang } = useLanguage()
+  const t = translations[lang]
 
   useEffect(() => {
     const visual = visualRef.current
@@ -64,8 +68,9 @@ function Home() {
             {/* LEFT: Name + badges */}
             <div className="hero__content">
               <div className="hero__badges">
-                <span className="badge hero__badge">UX Designer</span>
-                <span className="badge hero__badge">Web Developer</span>
+                {t.home.badges.map((badge, i) => (
+                  <span key={i} className="badge hero__badge">{badge}</span>
+                ))}
               </div>
 
               <h1 className="hero__title">
@@ -92,7 +97,7 @@ function Home() {
                 <div className="sticky-note sticky-note--gold">
                   <div className="sticky-note__divider"></div>
                   <p className="sticky-note__text">
-                    Piensa más diseña menos
+                    {t.home.stickyNotes[0]}
                   </p>
                   <div className="sticky-note__pin">📌</div>
                 </div>
@@ -100,7 +105,7 @@ function Home() {
                 <div className="sticky-note sticky-note--lavender">
                   <div className="sticky-note__divider"></div>
                   <p className="sticky-note__text">
-                    Simplifica y luego simplifica de nuevo
+                    {t.home.stickyNotes[1]}
                   </p>
                   <div className="sticky-note__pin">📌</div>
                 </div>
@@ -108,7 +113,7 @@ function Home() {
                 <div className="sticky-note sticky-note--pink">
                   <div className="sticky-note__divider"></div>
                   <p className="sticky-note__text">
-                    No tiene que ser perfecto mamá.
+                    {t.home.stickyNotes[2]}
                   </p>
                   <div className="sticky-note__pin"></div>
                 </div>
@@ -119,10 +124,9 @@ function Home() {
           {/* BELOW: Description */}
           <div className="hero__description">
             <p className="hero__subtitle">
-              ¡Hola, mi nombre es Vane! 👋 y soy Diseñadora UX/UI con más de 4 años de experiencia en diseño digital y un fuerte enfoque en research, estrategia y visión de negocio. Cuento con un backup de 3 años de Diseñadora web y FrontEnd. Mi objetivo es crear productos digitales que funcionen para las personas y para los objetivos del negocio y mis clientes, combinando empatía, análisis y creatividad.
+              {t.home.description1}
             </p>
-            <p className="hero__subtitle">
-              Actualmente soy consultora freelancer para proyectos de <strong>Desarrollo web</strong>, <strong>diseño UX/UI</strong> y <strong>diseño de tiendas online</strong>. ¿Tienes algun proyecto en mente? <strong>Escribime por whatsapp.</strong>
+            <p className="hero__subtitle" dangerouslySetInnerHTML={{ __html: t.home.description2 }}>
             </p>
           </div>
         </div>
