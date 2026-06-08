@@ -23,7 +23,17 @@
 - Rutas: `/`, `/proyectos`, `/proyectos/:slug`, `/experiencia`, `/resumen`, `*`
 - App shell: `<Navbar />` + `<Outlet />` + `<BottomNav />` — **NO renderizar `<Footer />`**
 - BottomNav fijo con 4 items usando `NavLink` para estado activo
-- Navbar tiene toggle ENG/ESP — UI only, sin i18n implementado
+- Navbar tiene selector de idioma ES/EN con estado activo
+
+### Sistema de Internacionalización (i18n)
+- **Context API**: `LanguageContext` + `LanguageProvider` en `src/contexts/`
+- **Hook**: `useLanguage()` en `src/hooks/useLanguage.js` para acceder a `lang` y `toggleLanguage()`
+- **Traducciones**: Objeto completo en `src/i18n/translations.js` con todas las strings ES/EN
+- **Persistencia**: `localStorage` guarda preferencia de idioma
+- **Nivel de inglés**: B1+ (oraciones claras, vocabulario profesional UX/UI)
+- **Uso**: Importar `useLanguage` y `translations`, luego `const t = translations[lang]`
+- **Agregar idioma**: Solo agregar nueva key al objeto `translations` (ej: `fr`, `pt`)
+- **Regla**: NO duplicar páginas — usar un solo archivo JSX con traducciones dinámicas
 
 ### Design System (del sistema madre)
 Usar tokens de `../AGENTS.md`:
@@ -138,6 +148,7 @@ Ejemplos:
 
 ## Cambios Recientes (Recent Changes)
 
+- **i18n**: Sistema bilingüe ES/EN implementado con Context API, selector de idioma en Navbar, traducciones completas en `src/i18n/translations.js`, persistencia en localStorage, nivel de inglés B1+
 - **Home**: layout columna (foto arriba, texto abajo), badges neutrales "UX Designer" y "Web Developer", sticky notes a la izquierda, nueva bio con servicios destacados en negrita y CTA a WhatsApp, sin botón CTA, imagen hero `vane_ home_v4.jpeg`
 - **Projects**: sin subtítulo, sin chips de categoría, cards transparentes (`rgba(250,245,240,0.45)`), feature card usa Golden Yellow (`--color-primary`), las 5 imágenes de proyectos alineadas a la izquierda (`object-position: left center`)
 - **ProjectDetail**: bloques de texto sin `max-width` (ancho completo del contenedor), imágenes hero alineadas a la izquierda
