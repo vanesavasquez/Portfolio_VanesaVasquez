@@ -54,7 +54,7 @@ function About() {
               interfaces intuitivas que respiran.
             </p>
             <div className="about__cta-row">
-              <a href="mailto:contacto@vanesavasquez.com" className="btn btn--outline">
+              <a href="mailto:vanesaledesma90@gmail.com" className="btn btn--outline">
                 ✉ Email Me
               </a>
               <a href="https://linkedin.com/" className="btn btn--outline" target="_blank" rel="noopener noreferrer">

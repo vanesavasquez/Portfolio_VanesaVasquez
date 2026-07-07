@@ -20,6 +20,7 @@ export const translations = {
       title: 'Proyectos',
       subtitle: '¡Hola! Sigo sumando vistas y casos de estudio a este espacio. Resumir 7 años de trabajo lleva tiempo, especialmente porque la mayoría de los productos son de uso privado. Para cuidar la confianza de las empresas con las que colaboré, cada pantalla o detalle que comparto pasa por una rigurosa revisión para asegurar que no se exponga información sensible.',
       viewCase: 'Ver caso de estudio →',
+      tabs: { ux: 'UX', web: 'Web' },
       items: [
         {
           slug: 'fico-crm-mobile',
@@ -51,6 +52,32 @@ export const translations = {
           category: 'Contenido Digital',
           description: 'Lanzamiento de capacitaciones (mp4) dentro del campus de la empresa para asegurar una adopción fluida mediante una estrategia de onboarding y capacitación a gran escala. La serie completa incluye 12 videos.'
         }
+      ],
+      webItems: [
+        {
+          slug: 'doloponce',
+          title: 'DoloPonce (ARG)',
+          category: 'Web',
+          description: 'Desarrollo de una plataforma web minimalista y de alto impacto visual orientada a servicios de interiorismo y diseño.'
+        },
+        {
+          slug: 'selfbox',
+          title: 'SelfBox (ARG)',
+          category: 'Web',
+          description: 'Desarrollo de una plataforma web interactiva de alto rendimiento con técnicas de animación avanzada y estética industrial.'
+        },
+        {
+          slug: 'mapfre-tecuidamos',
+          title: 'MAPFRE TeCuidamos',
+          category: 'Web',
+          description: 'Desarrollo de un portal de beneficios y descuentos a gran escala con filtrado dinámico de datos en tiempo real.'
+        },
+        {
+          slug: 'allcovering',
+          title: 'AllCovering (ARG)',
+          category: 'Web',
+          description: 'Plataforma de e-commerce para catálogo digital de decoración y revestimientos con módulo mayorista.'
+        }
       ]
     },
     projectDetail: {
@@ -66,7 +93,10 @@ export const translations = {
         screens: 'Pantallas del producto',
         fullDesign: 'Diseño completo',
         architecture: 'Arquitectura',
-        explore: 'Explorar el sistema'
+        explore: 'Explorar el sistema',
+        skills: 'Características Técnicas',
+        desktopView: 'Vista Escritorio',
+        mobileView: 'Vista Mobile'
       },
       iframeFallback: 'GitHub está teniendo problemas con este sitio pero puedes ingresar de forma manual haciendo',
       iframeFallbackLink: 'clic aquí',
@@ -117,6 +147,57 @@ export const translations = {
           solution: 'Módulo 1 - Pantalla Inicial: navegación del dashboard, indicadores de cobertura y sincronización. Módulo 2 - Estadísticas de Visitas: análisis de números de cartera y categoría prescriptiva. Módulo 3 - Parte Diario: gestión de carga horaria y tipos de hora promocional. Módulo 4 - Farmacovigilancia: accesos directos y flujos para el reporte de casos. Módulo 5 - Recordatorios y Agenda: la transición clave de la agenda física a la digital. Módulo 6 - Listado de Médicos: gestión integral de visitas, no visitas y acciones globales. El proceso de producción abarcó desde la creación de los storylines y bocetos hasta la edición y renderizado final, con múltiples iteraciones (V1 a V5) para garantizar claridad didáctica.',
           impact: 'Se entregó un ecosistema de aprendizaje compuesto por un video introductorio, seis videos MP4 funcionales (~650 MB en total), la documentación de soporte (guiones en DOCX) y un presupuesto documentado para proyectar una Etapa 2 (que incluyó 7 videos más). Esta iniciativa permitió capacitar de manera estandarizada y autogestionada a toda la fuerza de ventas, reduciendo drásticamente la curva de aprendizaje y asegurando una transición exitosa hacia el nuevo ecosistema CRM de Laboratorios Bagó.',
           screens: ['Módulo 1 - Pantalla Inicial', 'Módulo 2 - Estadísticas', 'Módulo 3 - Parte Diario', 'Módulo 4 - Farmacovigilancia', 'Módulo 5 - Agenda']
+        }
+      },
+      webItems: {
+        'doloponce': {
+          title: 'DoloPonce (ARG)',
+          description: 'Desarrollo de una plataforma web minimalista y de alto impacto visual orientada a servicios de interiorismo y diseño. El enfoque principal fue la creación de un diseño fluida, priorizando la estética limpia y la jerarquía tipográfica para transmitir profesionalismo y elegancia.',
+          skills: [
+            { name: 'Arquitectura CMS', desc: 'Construida sobre WordPress utilizando el framework Astra, permitiendo una gestión de contenidos ágil y escalable.' },
+            { name: 'Diseño Visual', desc: 'Implementación de layouts personalizados mediante Elementor Pro, con un enfoque mobile-first y diseño totalmente responsivo.' },
+            { name: 'Optimización de Recursos', desc: 'Uso de formatos de imagen de última generación (WebP) para garantizar tiempos de carga rápidos sin sacrificar la calidad visual.' },
+            { name: 'Interactividad', desc: 'Integración de componentes dinámicos como carruseles de bucle (Loop Carousels) y transiciones suaves.' },
+            { name: 'Tipografía y Estilo', desc: 'Utilizando Google Fonts (Raleway y Source Serif Pro) para reforzar la identidad de marca a través del CSS.' }
+          ],
+          desktopUrl: 'https://dolopons.com.ar/',
+          mobileUrl: 'https://dolopons.com.ar/'
+        },
+        'selfbox': {
+          title: 'SelfBox (ARG)',
+          description: 'Desarrollo de una plataforma web interactiva de alto rendimiento para Selfbox. El proyecto se centró en crear una interfaz inmersiva que utiliza técnicas de animación avanzada para guiar al usuario a través de la propuesta de valor de la marca, manteniendo una estética industrial y tecnológica.',
+          skills: [
+            { name: 'Stack Moderno', desc: 'Desarrollada como una SPA utilizando React y Vite, garantizando una navegación instantánea y una estructura de componentes modular.' },
+            { name: 'Experiencia Cinematográfica', desc: 'Implementación de secuencias de imágenes optimizadas (WebP) que reaccionan al scroll del usuario, creando un efecto narrativo visual fluido.' },
+            { name: 'Optimización de Performance', desc: 'Configuración avanzada de bundling y carga diferida de activos para manejar grandes volúmenes de recursos visuales sin comprometer la velocidad.' },
+            { name: 'Interfaz Adaptativa', desc: 'Diseño fully responsive con un fuerte enfoque en la legibilidad, utilizando tipografías como Montserrat y Raleway mediante CSS moderno.' },
+            { name: 'Interactividad Dinámica', desc: 'Uso de Hooks de React para gestionar estados complejos de animación y transiciones de UI en tiempo real.' }
+          ],
+          desktopUrl: 'https://selfbox.com.ar/',
+          mobileUrl: 'https://selfbox.com.ar/'
+        },
+        'mapfre-tecuidamos': {
+          title: 'MAPFRE TeCuidamos',
+          description: 'Desarrollo de un portal de beneficios y descuentos a gran escala, enfocado en la usabilidad y el filtrado dinámico de datos. El objetivo principal fue centralizar cientos de ofertas comerciales, proporcionando a los usuarios una herramienta de búsqueda rápida y precisa.',
+          skills: [
+            { name: 'Ecosistema WordPress', desc: 'Implementación robusta sobre el framework Divi, extendida mediante plugins personalizados para funcionalidades específicas del negocio.' },
+            { name: 'Módulo de Filtros Dinámicos (AJAX)', desc: 'Desarrollo de un sistema de búsqueda y filtrado avanzado utilizando Divi Machine. Este módulo permite a los usuarios filtrar beneficios por categorías, marcas o palabras clave en tiempo real mediante tecnología AJAX, evitando recargas de página y mejorando drásticamente la UX.' },
+            { name: 'Componentes Custom', desc: 'Creación de sliders y carruseles dinámicos integrando la librería Owl Carousel para destacar promociones prioritarias.' }
+          ],
+          desktopUrl: 'https://tecuidamos.mapfre.com.ar/',
+          mobileUrl: 'https://tecuidamos.mapfre.com.ar/'
+        },
+        'allcovering': {
+          title: 'AllCovering (ARG)',
+          description: 'Plataforma de e-commerce para AllCovering es un catálogo digital robusto y visual, diseñado para facilitar la exploración de productos de decoración y revestimientos, con un enfoque en la navegación intuitiva y la gestión eficiente de categorías de productos. El proyecto prioriza la visualización del catalogo disponible y un modulo de venta para clientes mayoristas seleccionados.',
+          skills: [
+            { name: 'E-commerce Engine', desc: 'Implementación sobre WooCommerce y WordPress, utilizando el framework Astra para garantizar un rendimiento óptimo y una estructura SEO-friendly.' },
+            { name: 'Diseño Modular', desc: 'Uso de Elementor Pro para la creación de plantillas de producto dinámicas y layouts personalizados que mantienen la coherencia visual de la marca.' },
+            { name: 'Módulo de Filtros de Catálogo', desc: 'Desarrollo de un sistema de navegación por facetas que permite a los usuarios segmentar productos por categorías específicas (como alfombras, césped sintético, etc.) de manera instantánea, optimizando la búsqueda dentro de un inventario extenso.' },
+            { name: 'Optimización de Carga', desc: 'Integración de LiteSpeed Cache para la minificación y combinación de archivos CSS/JS, junto con el uso de imágenes en formato WebP para una carga ultra rápida.' }
+          ],
+          desktopUrl: 'https://allcovering.com.ar/',
+          mobileUrl: 'https://allcovering.com.ar/'
         }
       }
     },
@@ -266,6 +347,7 @@ export const translations = {
       title: 'Projects',
       subtitle: "Hi! I'm still adding views and case studies to this space. Summarizing 7 years of work takes time, especially since most products are for private use. To protect the trust of the companies I collaborated with, every screen or detail I share goes through a rigorous review to ensure no sensitive information is exposed.",
       viewCase: 'View case study →',
+      tabs: { ux: 'UX', web: 'Web' },
       items: [
         {
           slug: 'fico-crm-mobile',
@@ -297,6 +379,32 @@ export const translations = {
           category: 'Digital Content',
           description: 'Launch of training videos (mp4) within the company campus to ensure smooth adoption through a large-scale onboarding and training strategy. The complete series includes 12 videos.'
         }
+      ],
+      webItems: [
+        {
+          slug: 'doloponce',
+          title: 'DoloPonce (ARG)',
+          category: 'Web',
+          description: 'Development of a minimalist, high-visual-impact web platform for interior design services.'
+        },
+        {
+          slug: 'selfbox',
+          title: 'SelfBox (ARG)',
+          category: 'Web',
+          description: 'Development of a high-performance interactive web platform with advanced animation techniques and industrial aesthetics.'
+        },
+        {
+          slug: 'mapfre-tecuidamos',
+          title: 'MAPFRE TeCuidamos',
+          category: 'Web',
+          description: 'Development of a large-scale benefits and discounts portal with real-time dynamic data filtering.'
+        },
+        {
+          slug: 'allcovering',
+          title: 'AllCovering (ARG)',
+          category: 'Web',
+          description: 'E-commerce platform for a digital catalog of decoration and coverings with a wholesale module.'
+        }
       ]
     },
     projectDetail: {
@@ -312,7 +420,10 @@ export const translations = {
         screens: 'Product Screens',
         fullDesign: 'Full Design',
         architecture: 'Architecture',
-        explore: 'Explore the System'
+        explore: 'Explore the System',
+        skills: 'Technical Features',
+        desktopView: 'Desktop View',
+        mobileView: 'Mobile View'
       },
       iframeFallback: 'GitHub is having issues with this site, but you can access it manually by',
       iframeFallbackLink: 'clicking here',
@@ -363,6 +474,57 @@ export const translations = {
           solution: 'Module 1 - Initial Screen: dashboard navigation, coverage indicators, and synchronization. Module 2 - Visit Statistics: analysis of portfolio numbers and prescriptive category. Module 3 - Daily Report: workload management and promotional hour types. Module 4 - Pharmacovigilance: shortcuts and flows for case reporting. Module 5 - Reminders and Agenda: the key transition from physical to digital agenda. Module 6 - Doctor List: comprehensive management of visits, non-visits, and global actions. The production process ranged from creating storylines and sketches to final editing and rendering, with multiple iterations (V1 to V5) to ensure didactic clarity.',
           impact: 'A learning ecosystem was delivered consisting of an introductory video, six functional MP4 videos (~650 MB total), support documentation (scripts in DOCX), and a documented budget to project Stage 2 (which included 7 more videos). This initiative enabled standardized and self-managed training for the entire sales force, dramatically reducing the learning curve and ensuring a successful transition to the new Laboratorios Bagó CRM ecosystem.',
           screens: ['Module 1 - Initial Screen', 'Module 2 - Statistics', 'Module 3 - Daily Report', 'Module 4 - Pharmacovigilance', 'Module 5 - Agenda']
+        }
+      },
+      webItems: {
+        'doloponce': {
+          title: 'DoloPonce (ARG)',
+          description: 'Development of a minimalist, high-visual-impact web platform for interior design services. The main focus was creating a fluid design, prioritizing clean aesthetics and typographic hierarchy to convey professionalism and elegance.',
+          skills: [
+            { name: 'CMS Architecture', desc: 'Built on WordPress using the Astra framework, enabling agile and scalable content management.' },
+            { name: 'Visual Design', desc: 'Implementation of custom layouts via Elementor Pro, with a mobile-first approach and fully responsive design.' },
+            { name: 'Resource Optimization', desc: 'Use of next-generation image formats (WebP) to ensure fast loading times without sacrificing visual quality.' },
+            { name: 'Interactivity', desc: 'Integration of dynamic components such as Loop Carousels and smooth transitions.' },
+            { name: 'Typography & Style', desc: 'Using Google Fonts (Raleway and Source Serif Pro) to reinforce brand identity through CSS.' }
+          ],
+          desktopUrl: 'https://dolopons.com.ar/',
+          mobileUrl: 'https://dolopons.com.ar/'
+        },
+        'selfbox': {
+          title: 'SelfBox (ARG)',
+          description: 'Development of a high-performance interactive web platform for Selfbox. The project focused on creating an immersive interface that uses advanced animation techniques to guide the user through the brand value proposition, maintaining an industrial and technological aesthetic.',
+          skills: [
+            { name: 'Modern Stack', desc: 'Developed as a SPA using React and Vite, ensuring instant navigation and a modular component structure.' },
+            { name: 'Cinematic Experience', desc: 'Implementation of optimized image sequences (WebP) that react to user scroll, creating a fluid narrative visual effect.' },
+            { name: 'Performance Optimization', desc: 'Advanced bundling and lazy loading configuration to handle large volumes of visual assets without compromising speed.' },
+            { name: 'Adaptive Interface', desc: 'Fully responsive design with a strong focus on legibility, using fonts like Montserrat and Raleway via modern CSS.' },
+            { name: 'Dynamic Interactivity', desc: 'Use of React Hooks to manage complex animation states and real-time UI transitions.' }
+          ],
+          desktopUrl: 'https://selfbox.com.ar/',
+          mobileUrl: 'https://selfbox.com.ar/'
+        },
+        'mapfre-tecuidamos': {
+          title: 'MAPFRE TeCuidamos',
+          description: 'Development of a large-scale benefits and discounts portal, focused on usability and dynamic data filtering. The main objective was to centralize hundreds of commercial offers, providing users with a fast and precise search tool.',
+          skills: [
+            { name: 'WordPress Ecosystem', desc: 'Robust implementation on the Divi framework, extended through custom plugins for business-specific functionalities.' },
+            { name: 'Dynamic Filters Module (AJAX)', desc: 'Development of an advanced search and filtering system using Divi Machine. This module allows users to filter benefits by categories, brands, or keywords in real time via AJAX technology, avoiding page reloads and drastically improving UX.' },
+            { name: 'Custom Components', desc: 'Creation of dynamic sliders and carousels integrating the Owl Carousel library to highlight priority promotions.' }
+          ],
+          desktopUrl: 'https://tecuidamos.mapfre.com.ar/',
+          mobileUrl: 'https://tecuidamos.mapfre.com.ar/'
+        },
+        'allcovering': {
+          title: 'AllCovering (ARG)',
+          description: 'E-commerce platform for AllCovering is a robust and visual digital catalog, designed to facilitate the exploration of decoration and covering products, with a focus on intuitive navigation and efficient product category management. The project prioritizes the display of the available catalog and a sales module for selected wholesale clients.',
+          skills: [
+            { name: 'E-commerce Engine', desc: 'Implementation on WooCommerce and WordPress, using the Astra framework to ensure optimal performance and an SEO-friendly structure.' },
+            { name: 'Modular Design', desc: 'Use of Elementor Pro for the creation of dynamic product templates and custom layouts that maintain the brand visual coherence.' },
+            { name: 'Catalog Filters Module', desc: 'Development of a faceted navigation system that allows users to segment products by specific categories (such as rugs, synthetic grass, etc.) instantly, optimizing search within an extensive inventory.' },
+            { name: 'Loading Optimization', desc: 'Integration of LiteSpeed Cache for minification and combination of CSS/JS files, along with the use of WebP format images for ultra-fast loading.' }
+          ],
+          desktopUrl: 'https://allcovering.com.ar/',
+          mobileUrl: 'https://allcovering.com.ar/'
         }
       }
     },

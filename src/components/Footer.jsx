@@ -32,7 +32,7 @@ function Footer() {
               GH
             </a>
             <a
-              href="mailto:contacto@vanesavasquez.com"
+              href="mailto:vanesaledesma90@gmail.com"
               className="footer__social-link"
               aria-label="Email"
             >

@@ -69,7 +69,7 @@ Usar tokens de `../AGENTS.md`:
 - El toggle de idioma es decorativo por ahora (no implementar i18n aún)
 - **Navbar brand** (`navbar__brand`) debe usar la tipografía **Against** (`--font-title`)
 
-### Slugs de Proyectos (5 proyectos reales)
+### Slugs de Proyectos UX (5 proyectos)
 | Slug | Proyecto | Categoría |
 |------|----------|-----------|
 | `fico-crm-mobile` | FiCo CRM - Mobile | Producto |
@@ -77,6 +77,25 @@ Usar tokens de `../AGENTS.md`:
 | `sistema-de-diseno-bago` | Sistema de Diseño Bagó | System design |
 | `transfer-laboratorios-bago` | Transfer (Laboratorios Bagó) | Rediseño UX |
 | `campus-bago` | Campus Bagó | Contenido Digital |
+
+### Slugs de Proyectos Web (4 proyectos)
+| Slug | Proyecto | Tecnología | Imagen reutilizada |
+|------|----------|------------|-------------------|
+| `doloponce` | DoloPonce (ARG) | WP, Blog de SEO orgánico | `fico-crm-mobile.png` |
+| `selfbox` | SelfBox (ARG) | React, Landing de posicionamiento y SEO | `fico-crm-web.png` |
+| `mapfre-tecuidamos` | MAPFRE TeCuidamos | WP, Web corporativa con módulo de beneficios | `sistema-de-diseno.png` |
+| `allcovering` | AllCovering (ARG) | WP, e-commerce Mayorista | `transfer.png` |
+
+### Página de Proyectos
+- Tabs **UX | Web** alineados a la derecha del header, siguiendo el design system (pills con `var(--font-title)`, estado activo con `var(--color-primary)`)
+- Grid bento filtrado por tab activo (`useState` en `Projects.jsx`)
+- Cards web mantienen el mismo estilo visual que UX (transparentes, `object-position: left center`)
+
+### Página de Detalle Web (`ProjectDetail.jsx`)
+- Layout condicional: detecta si el slug pertenece a `projectDetail.webItems` o `projectDetail.items`
+- **Layout Web**: Header (título + descripción) → Hero Image → Descripción → Skills Grid (cards con fondo cream `#FAF5F0`, texto `#5A3E39`) → Vista Escritorio (iframe 100% × 700px) → Vista Mobile (iframe 375px × 700px, centrado)
+- **Layout UX**: Mantiene el layout actual (descripción, desafío, investigación, solución, impacto, pantallas, arquitectura)
+- Map de `slugToImage` para que los proyectos web reutilicen imágenes existentes sin duplicar archivos
 
 ### Archivos Importantes
 - Datos de proyectos: `src/pages/Projects.jsx` (lista) y `src/pages/ProjectDetail.jsx` (detalle)
@@ -149,10 +168,12 @@ Ejemplos:
 
 ## Cambios Recientes (Recent Changes)
 
+- **Contacto**: Email actualizado a `vanesaledesma90@gmail.com` en Resume, About y Footer
+- **Projects**: Tabs **UX | Web** implementados con filtrado de grid bento. Proyectos UX (5) y Web (4) en `translations.js` y `Projects.jsx`
+- **ProjectDetail**: Layout condicional UX vs Web. Layout Web incluye Skills Grid (estilo Resume) + iframes Desktop (100%×700px) y Mobile (375px×700px). Proyectos web reutilizan imágenes existentes via `slugToImage`
 - **i18n**: Sistema bilingüe ES/EN implementado con Context API, selector de idioma en Navbar, traducciones completas en `src/i18n/translations.js`, persistencia en localStorage, nivel de inglés B1+
 - **Home**: layout columna (foto arriba, texto abajo), badges neutrales "UX Designer" y "Web Developer", sticky notes a la izquierda, nueva bio con servicios destacados en negrita y CTA a WhatsApp, sin botón CTA, imagen hero `vane_ home_v4.jpeg`
-- **Projects**: sin subtítulo, sin chips de categoría, cards transparentes (`rgba(250,245,240,0.45)`), feature card usa Golden Yellow (`--color-primary`), las 5 imágenes de proyectos alineadas a la izquierda (`object-position: left center`)
-- **ProjectDetail**: bloques de texto sin `max-width` (ancho completo del contenedor), imágenes hero alineadas a la izquierda
+- **ProjectDetail (UX)**: bloques de texto sin `max-width` (ancho completo del contenedor), imágenes hero alineadas a la izquierda
 - **Resume**: foto de perfil real (`imagen-perfil-vanesa-vasquez-byn.png`), skill cards con descripciones, nivel de inglés Nivel 7 (CUI, UBA), sección de certificaciones removida, usa `.container` estándar (max-width: 1450px), skill cards con fondo cream y texto de alto contraste para accesibilidad AA, experiencias y educación actualizadas con datos reales del CV, botón de descarga apunta a `/docs/cv/CV_LedesmaVanesa_UXUIdesigner-2.pdf`, link de LinkedIn actualizado a `https://www.linkedin.com/in/vanesa-vasquez/`
 - **Global**: fondo dot-grid en todas las páginas (`.page`), fuente Chillax removida, sombras corregidas a valores Vane-Vas, nuevos componentes CSS (`.badge`, `.input`, `.divider`, `.chip--active`), tokens de colores para sticky notes añadidos
 - **Navegación**: sección "Sobre Mí" removida del menú y rutas (BottomNav ahora tiene 4 items)

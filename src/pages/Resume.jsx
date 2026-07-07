@@ -104,7 +104,7 @@ function Resume() {
         {/* ── Contact footer ── */}
         <div className="resume__footer-bar">
           <div className="resume__contact-links">
-            <a href="mailto:contacto@vanesavasquez.com" className="resume__contact-link">
+            <a href="mailto:vanesaledesma90@gmail.com" className="resume__contact-link">
               ✉ Email
             </a>
             <a href="https://www.linkedin.com/in/vanesa-vasquez/" className="resume__contact-link" target="_blank" rel="noopener noreferrer">
