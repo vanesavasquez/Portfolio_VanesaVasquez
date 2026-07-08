@@ -31,6 +31,11 @@ function ProjectDetail() {
   const [iframeFailed, setIframeFailed] = useState(false)
   const timeoutRef = useRef(null)
 
+  const [webDesktopFailed, setWebDesktopFailed] = useState(false)
+  const [webMobileFailed, setWebMobileFailed] = useState(false)
+  const webDesktopTimeoutRef = useRef(null)
+  const webMobileTimeoutRef = useRef(null)
+
   useEffect(() => {
     if (slug === 'sistema-de-diseno-bago') {
       timeoutRef.current = setTimeout(() => {
@@ -40,9 +45,34 @@ function ProjectDetail() {
     return () => clearTimeout(timeoutRef.current)
   }, [slug])
 
+  useEffect(() => {
+    if (isWeb) {
+      webDesktopTimeoutRef.current = setTimeout(() => {
+        setWebDesktopFailed(true)
+      }, 5000)
+      webMobileTimeoutRef.current = setTimeout(() => {
+        setWebMobileFailed(true)
+      }, 5000)
+    }
+    return () => {
+      clearTimeout(webDesktopTimeoutRef.current)
+      clearTimeout(webMobileTimeoutRef.current)
+    }
+  }, [slug, isWeb])
+
   const handleIframeLoad = () => {
     clearTimeout(timeoutRef.current)
     setIframeFailed(false)
+  }
+
+  const handleWebDesktopLoad = () => {
+    clearTimeout(webDesktopTimeoutRef.current)
+    setWebDesktopFailed(false)
+  }
+
+  const handleWebMobileLoad = () => {
+    clearTimeout(webMobileTimeoutRef.current)
+    setWebMobileFailed(false)
   }
 
   if (!project) {
@@ -77,10 +107,12 @@ function ProjectDetail() {
           </div>
         </div>
 
-        {/* ── Hero Image ── */}
-        <div className="project-detail__hero-img">
-          <img src={slugToImage[slug] || `/images/${slug}.png`} alt={project.title} />
-        </div>
+        {/* ── Hero Image (solo UX) ── */}
+        {!isWeb && (
+          <div className="project-detail__hero-img">
+            <img src={slugToImage[slug] || `/images/${slug}.png`} alt={project.title} />
+          </div>
+        )}
 
         {isWeb ? (
           <>
@@ -106,15 +138,31 @@ function ProjectDetail() {
             </div>
 
             {/* ── Desktop View ── */}
-            <div className="project-detail__section">
+            <div className="project-detail__section project-detail__section--desktop-view">
               <h2 className="project-detail__section-title">{t.projectDetail.sections.desktopView}</h2>
               <div className="project-detail__iframe-wrapper project-detail__iframe-wrapper--desktop">
-                <iframe
-                  className="project-detail__iframe"
-                  src={project.desktopUrl}
-                  title={`${project.title} - Desktop`}
-                  loading="lazy"
-                />
+                {!webDesktopFailed ? (
+                  <iframe
+                    className="project-detail__iframe"
+                    src={project.desktopUrl}
+                    title={`${project.title} - Desktop`}
+                    loading="lazy"
+                    onLoad={handleWebDesktopLoad}
+                  />
+                ) : (
+                  <div className="project-detail__iframe-fallback">
+                    <p>
+                      {t.projectDetail.iframeFallbackWeb}{' '}
+                      <a
+                        href={project.desktopUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t.projectDetail.iframeFallbackWebLink}
+                      </a>.
+                    </p>
+                  </div>
+                )}
               </div>
               <div className="project-detail__iframe-link">
                 <a
@@ -132,12 +180,28 @@ function ProjectDetail() {
               <h2 className="project-detail__section-title">{t.projectDetail.sections.mobileView}</h2>
               <div className="project-detail__iframe-mobile-wrapper">
                 <div className="project-detail__iframe-wrapper project-detail__iframe-wrapper--mobile">
-                  <iframe
-                    className="project-detail__iframe"
-                    src={project.mobileUrl}
-                    title={`${project.title} - Mobile`}
-                    loading="lazy"
-                  />
+                  {!webMobileFailed ? (
+                    <iframe
+                      className="project-detail__iframe"
+                      src={project.mobileUrl}
+                      title={`${project.title} - Mobile`}
+                      loading="lazy"
+                      onLoad={handleWebMobileLoad}
+                    />
+                  ) : (
+                    <div className="project-detail__iframe-fallback">
+                      <p>
+                        {t.projectDetail.iframeFallbackWeb}{' '}
+                        <a
+                          href={project.mobileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {t.projectDetail.iframeFallbackWebLink}
+                        </a>.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="project-detail__iframe-link">

@@ -100,6 +100,8 @@ export const translations = {
       },
       iframeFallback: 'GitHub está teniendo problemas con este sitio pero puedes ingresar de forma manual haciendo',
       iframeFallbackLink: 'clic aquí',
+      iframeFallbackWeb: 'Este sitio no permite visualización directa. Podés visitarlo haciendo',
+      iframeFallbackWebLink: 'clic aquí',
       viewFullPage: 'Ver página completa →',
       exploreSystem: 'Explorar el sistema →',
       items: {
@@ -427,6 +429,8 @@ export const translations = {
       },
       iframeFallback: 'GitHub is having issues with this site, but you can access it manually by',
       iframeFallbackLink: 'clicking here',
+      iframeFallbackWeb: 'This site does not allow direct embedding. You can visit it by',
+      iframeFallbackWebLink: 'clicking here',
       viewFullPage: 'View full page →',
       exploreSystem: 'Explore the system →',
       items: {
