@@ -18,6 +18,8 @@ skills-lock.json
 
 # Documentation folder
 docs/
+!public/docs/
+!public/docs/**
 
 # HyperFrames output (generated videos)
 hyperframes/output/

@@ -20,7 +20,7 @@ function Resume() {
               {t.resume.intro}
             </p>
             <a
-              href="/docs/cv/CV_LedesmaVanesa_UXUIdesigner-2.pdf"
+              href={`/docs/cv/CV_VanesaVasquez_${lang === 'en' ? 'EN' : 'ES'}.pdf`}
               className="btn btn--primary resume__download-btn"
               download
             >
@@ -115,7 +115,7 @@ function Resume() {
             </a>
           </div>
           <a
-            href="/docs/cv/CV_LedesmaVanesa_UXUIdesigner-2.pdf"
+            href={`/docs/cv/CV_VanesaVasquez_${lang === 'en' ? 'EN' : 'ES'}.pdf`}
             className="btn btn--outline btn--sm"
             download
           >
