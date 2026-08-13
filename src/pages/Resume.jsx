@@ -20,9 +20,12 @@ function Resume() {
               {t.resume.intro}
             </p>
             <a
-              href={`/docs/cv/CV_VanesaVasquez_${lang === 'en' ? 'EN' : 'ES'}.pdf`}
+              href={lang === 'en'
+                ? 'https://drive.google.com/file/d/12_CUz_t_Iz7wkG9-ICP15aWp0gzVMYz_/view?usp=sharing'
+                : 'https://drive.google.com/file/d/1EPRQynWgPmHqmU_tWSzhbNEkyiwRh7rp/view?usp=sharing'}
               className="btn btn--primary resume__download-btn"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {t.resume.downloadCV}
             </a>
@@ -115,9 +118,12 @@ function Resume() {
             </a>
           </div>
           <a
-            href={`/docs/cv/CV_VanesaVasquez_${lang === 'en' ? 'EN' : 'ES'}.pdf`}
+            href={lang === 'en'
+              ? 'https://drive.google.com/file/d/12_CUz_t_Iz7wkG9-ICP15aWp0gzVMYz_/view?usp=sharing'
+              : 'https://drive.google.com/file/d/1EPRQynWgPmHqmU_tWSzhbNEkyiwRh7rp/view?usp=sharing'}
             className="btn btn--outline btn--sm"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {t.resume.downloadCV}
           </a>

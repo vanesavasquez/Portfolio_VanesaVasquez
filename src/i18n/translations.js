@@ -270,7 +270,7 @@ export const translations = {
       name: 'Vanesa A. Ledesma Vasquez',
       roles: 'UX Designer | UX Research | Front-end | Product Designer | Web Development',
       intro: 'Especialista en UX con más de 5 años de experiencia transformando datos en decisiones de producto. Experta en liderar procesos de Discovery y validación en entornos complejos (B2B, B2E). Domina metodologías cualitativas y cuantitativas (lean UX) para crear experiencias centradas en el usuario. Habilidad para orquestar procesos de research y creativos, buena comunicadora con equipo de ingeniería.',
-      downloadCV: '↓ Descargar CV',
+      downloadCV: 'Ver resumen',
       sections: {
         skills: 'Skills',
         experience: 'Experiencia Profesional',
@@ -599,7 +599,7 @@ export const translations = {
       name: 'Vanesa A. Ledesma Vasquez',
       roles: 'UX Designer | UX Research | Front-end | Product Designer | Web Development',
       intro: 'UX Specialist with over 5 years of experience transforming data into product decisions. Expert in leading Discovery and validation processes in complex environments (B2B, B2E). Masters qualitative and quantitative methodologies (lean UX) to create user-centered experiences. Ability to orchestrate research and creative processes, strong communicator with engineering teams.',
-      downloadCV: '↓ Download CV',
+      downloadCV: 'View resume',
       sections: {
         skills: 'Skills',
         experience: 'Professional Experience',
