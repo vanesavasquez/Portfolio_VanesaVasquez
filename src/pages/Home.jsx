@@ -82,7 +82,7 @@ function Home() {
             <div className="hero__visual" ref={visualRef}>
               <div className="hero__img-wrapper">
                 <img
-                  src="/images/vane_ home_v4.jpeg"
+                  src="/images/Vane_home_v5.png"
                   alt="Vanesa Vasquez"
                   className="hero__img"
                 />
