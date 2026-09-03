@@ -8,6 +8,8 @@ export const translations = {
     },
     home: {
       badges: ['UX Designer', 'Web Developer'],
+      titleFirst: 'Hola soy',
+      titleSecond: 'Ux/ UI designer y fullstack developer',
       stickyNotes: [
         'Piensa más diseña menos',
         'Simplifica y luego simplifica de nuevo',
@@ -337,6 +339,8 @@ export const translations = {
     },
     home: {
       badges: ['UX Designer', 'Web Developer'],
+      titleFirst: 'Hi, I am a',
+      titleSecond: 'UX/UI Designer and Fullstack Developer',
       stickyNotes: [
         'Think more, design less',
         'Simplify, then simplify again',

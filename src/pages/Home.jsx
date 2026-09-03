@@ -74,7 +74,7 @@ function Home() {
               </div>
 
               <h1 className="hero__title">
-                {renderLetters('Vanesa', 'vanesa')} <span>{renderLetters('Vasquez', 'vasquez')}</span>
+                {renderLetters(t.home.titleFirst, 'first')} <span>{renderLetters(t.home.titleSecond, 'second')}</span>
               </h1>
             </div>
 
