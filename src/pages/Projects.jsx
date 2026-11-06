@@ -72,14 +72,6 @@ function Projects() {
         {/* ── Content: UX Paused vs Web Bento ── */}
         {activeTab === 'ux' ? (
           <div className="projects__paused-card">
-            <div className="projects__paused-top">
-              <div className="projects__paused-badge">
-                <span className="projects__paused-pulse" aria-hidden="true"></span>
-                <span>{t.projects.uxPaused.badge}</span>
-              </div>
-              <span className="projects__paused-side">{t.projects.uxPaused.badgeSide}</span>
-            </div>
-
             <div className="projects__paused-grid">
               <div className="projects__paused-main">
                 <h2 className="projects__paused-title">
