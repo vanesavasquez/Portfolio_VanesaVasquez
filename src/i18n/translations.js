@@ -23,6 +23,26 @@ export const translations = {
       subtitle: '¡Hola! Sigo sumando vistas y casos de estudio a este espacio. Resumir 7 años de trabajo lleva tiempo, especialmente porque la mayoría de los productos son de uso privado. Para cuidar la confianza de las empresas con las que colaboré, cada pantalla o detalle que comparto pasa por una rigurosa revisión para asegurar que no se exponga información sensible.',
       viewCase: 'Ver caso de estudio →',
       tabs: { ux: 'UX', web: 'Web' },
+      uxPaused: {
+        badge: 'SECCIÓN EN PAUSA • AJUSTANDO CASOS DE ESTUDIO',
+        badgeSide: '📋 Formato PDF disponible',
+        title: 'Estoy trabajando y ajustando los casos de estudio UX/UI',
+        description: 'Para garantizar que cada caso refleje con precisión las soluciones de diseño, procesos de research y métricas de impacto más recientes (y respetando los acuerdos de confidencialidad de los productos privados), esta sección se encuentra temporalmente en pausa mientras actualizo los contenidos.',
+        ctaLead: '¿Querés conocer mis casos de estudio completos en profundidad?',
+        ctaSub: 'Escribime por WhatsApp o Email y te envío los casos en formato PDF:',
+        btnWhatsapp: 'Solicitar por WhatsApp',
+        btnEmail: 'Solicitar por Email',
+        tip: 'También podés revisar mis proyectos activos en la pestaña',
+        tipTab: 'Web',
+        summaryTitle: 'Resumen',
+        note1: '5 casos de estudio en preparación',
+        note2: 'Research, Wireframes y UI Kits',
+        note3: 'PDF disponible inmediatamente',
+        noteFooter: 'Actualizado recientemente',
+        whatsappMessage: '¡Hola Vane! Te contacto desde tu portfolio para solicitar los casos de estudio UX/UI en formato PDF.',
+        emailSubject: 'Solicitud de Casos de Estudio UX/UI en PDF',
+        emailBody: 'Hola Vanesa,\n\nTe contacto desde tu portfolio para solicitar los casos de estudio UX/UI en formato PDF.\n\nMuchas gracias!'
+      },
       items: [
         {
           slug: 'fico-crm-mobile',
@@ -86,6 +106,15 @@ export const translations = {
       back: '← Volver a Proyectos',
       notFound: 'Proyecto no encontrado',
       notFoundDesc: 'El proyecto que buscás no existe. Volvé a la lista de proyectos.',
+      uxPaused: {
+        badge: 'CASO EN REVISIÓN Y AJUSTE',
+        title: 'Este caso de estudio UX/UI está siendo actualizado',
+        description: 'Actualmente me encuentro revisando las pantallas, arquitectura de información y métricas de este proyecto para reflejar su versión más reciente y precisa.',
+        requestPdfLead: 'Podés solicitar el caso de estudio completo en formato PDF directamente por WhatsApp o Email:',
+        btnWhatsapp: 'Solicitar PDF por WhatsApp',
+        btnEmail: 'Solicitar PDF por Email',
+        back: '← Volver a Proyectos'
+      },
       sections: {
         description: 'Descripción del proyecto',
         challenge: 'El Desafío',
@@ -354,6 +383,26 @@ export const translations = {
       subtitle: "Hi! I'm still adding views and case studies to this space. Summarizing 7 years of work takes time, especially since most products are for private use. To protect the trust of the companies I collaborated with, every screen or detail I share goes through a rigorous review to ensure no sensitive information is exposed.",
       viewCase: 'View case study →',
       tabs: { ux: 'UX', web: 'Web' },
+      uxPaused: {
+        badge: 'SECTION ON PAUSE • UPDATING CASE STUDIES',
+        badgeSide: '📋 PDF format available',
+        title: 'I am currently reviewing and updating my UX/UI case studies',
+        description: 'To ensure each case accurately showcases the latest design solutions, UX research processes, and business impact metrics (while complying with non-disclosure agreements for private enterprise tools), this section is temporarily on hold while I revise the contents.',
+        ctaLead: 'Interested in exploring my complete UX/UI case studies in detail?',
+        ctaSub: 'Reach out to me via WhatsApp or Email and I will gladly share them in PDF format:',
+        btnWhatsapp: 'Request via WhatsApp',
+        btnEmail: 'Request via Email',
+        tip: 'You can also explore my live web development projects under the',
+        tipTab: 'Web tab',
+        summaryTitle: 'Summary',
+        note1: '5 case studies in preparation',
+        note2: 'Research, Wireframes & UI Kits',
+        note3: 'PDF available upon request',
+        noteFooter: 'Recently updated',
+        whatsappMessage: 'Hi Vane! Reaching out from your portfolio to request your UX/UI case studies in PDF format.',
+        emailSubject: 'Request for UX/UI Case Studies (PDF)',
+        emailBody: 'Hi Vanesa,\n\nI am contacting you from your portfolio to request your UX/UI case studies in PDF format.\n\nThank you!'
+      },
       items: [
         {
           slug: 'fico-crm-mobile',
@@ -417,6 +466,15 @@ export const translations = {
       back: '← Back to Projects',
       notFound: 'Project not found',
       notFoundDesc: "The project you're looking for doesn't exist. Go back to the projects list.",
+      uxPaused: {
+        badge: 'CASE STUDY UNDER REVIEW',
+        title: 'This UX/UI case study is currently being updated',
+        description: 'I am currently reviewing the screens, information architecture, and metrics for this project to reflect its latest and most accurate version.',
+        requestPdfLead: 'You can request the complete case study in PDF format directly via WhatsApp or Email:',
+        btnWhatsapp: 'Request PDF via WhatsApp',
+        btnEmail: 'Request PDF via Email',
+        back: '← Back to Projects'
+      },
       sections: {
         description: 'Project Description',
         challenge: 'The Challenge',
