@@ -14,10 +14,10 @@ import './Projects.css'
 // ]
 
 const webProjectsMeta = [
-  { slug: 'doloponce', image: '/images/doloponce.jpg', size: 'large' },
-  { slug: 'selfbox', image: '/images/selfbox.jpg', size: 'medium' },
-  { slug: 'mapfre-tecuidamos', image: '/images/mapfre-tecuidamos.jpg', size: 'feature', isFeature: true },
-  { slug: 'allcovering', image: '/images/allcovering.jpg', size: 'wide' },
+  { slug: 'allcovering', image: '/images/allcovering.jpg', size: 'large' },
+  { slug: 'doloponce', image: '/images/doloponce.jpg', size: 'medium' },
+  { slug: 'mapfre-tecuidamos', image: '/images/mapfre-tecuidamos.jpg', size: 'medium' },
+  { slug: 'selfbox', image: '/images/selfbox.jpg', size: 'large' },
 ]
 
 function Projects() {
