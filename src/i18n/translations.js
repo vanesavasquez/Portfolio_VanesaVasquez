@@ -77,16 +77,16 @@ export const translations = {
       ],
       webItems: [
         {
+          slug: 'allcovering',
+          title: 'AllCovering (ARG)',
+          category: 'Web',
+          description: 'Plataforma de e-commerce para catálogo digital de decoración y revestimientos con módulo mayorista.'
+        },
+        {
           slug: 'doloponce',
           title: 'DoloPonce (ARG)',
           category: 'Web',
           description: 'Desarrollo de una plataforma web minimalista y de alto impacto visual orientada a servicios de interiorismo y diseño.'
-        },
-        {
-          slug: 'selfbox',
-          title: 'SelfBox (ARG)',
-          category: 'Web',
-          description: 'Desarrollo de una plataforma web interactiva de alto rendimiento con técnicas de animación avanzada y estética industrial.'
         },
         {
           slug: 'mapfre-tecuidamos',
@@ -95,10 +95,10 @@ export const translations = {
           description: 'Desarrollo de un portal de beneficios y descuentos a gran escala con filtrado dinámico de datos en tiempo real.'
         },
         {
-          slug: 'allcovering',
-          title: 'AllCovering (ARG)',
+          slug: 'selfbox',
+          title: 'SelfBox (ARG)',
           category: 'Web',
-          description: 'Plataforma de e-commerce para catálogo digital de decoración y revestimientos con módulo mayorista.'
+          description: 'Desarrollo de una plataforma web interactiva de alto rendimiento con técnicas de animación avanzada y estética industrial.'
         }
       ]
     },
@@ -437,16 +437,16 @@ export const translations = {
       ],
       webItems: [
         {
+          slug: 'allcovering',
+          title: 'AllCovering (ARG)',
+          category: 'Web',
+          description: 'E-commerce platform for a digital catalog of decoration and coverings with a wholesale module.'
+        },
+        {
           slug: 'doloponce',
           title: 'DoloPonce (ARG)',
           category: 'Web',
           description: 'Development of a minimalist, high-visual-impact web platform for interior design services.'
-        },
-        {
-          slug: 'selfbox',
-          title: 'SelfBox (ARG)',
-          category: 'Web',
-          description: 'Development of a high-performance interactive web platform with advanced animation techniques and industrial aesthetics.'
         },
         {
           slug: 'mapfre-tecuidamos',
@@ -455,10 +455,10 @@ export const translations = {
           description: 'Development of a large-scale benefits and discounts portal with real-time dynamic data filtering.'
         },
         {
-          slug: 'allcovering',
-          title: 'AllCovering (ARG)',
+          slug: 'selfbox',
+          title: 'SelfBox (ARG)',
           category: 'Web',
-          description: 'E-commerce platform for a digital catalog of decoration and coverings with a wholesale module.'
+          description: 'Development of a high-performance interactive web platform with advanced animation techniques and industrial aesthetics.'
         }
       ]
     },

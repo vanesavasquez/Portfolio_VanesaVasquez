@@ -13,10 +13,10 @@ const slugToImage = {
   'sistema-de-diseno-bago': '/images/sistema-de-diseno.png',
   'transfer-laboratorios-bago': '/images/transfer.png',
   'campus-bago': '/images/campus-bago.png',
-  'doloponce': '/images/fico-crm-mobile.png',
-  'selfbox': '/images/fico-crm-web.png',
-  'mapfre-tecuidamos': '/images/sistema-de-diseno.png',
-  'allcovering': '/images/transfer.png',
+  'doloponce': '/images/doloponce.jpg',
+  'selfbox': '/images/selfbox.jpg',
+  'mapfre-tecuidamos': '/images/mapfre-tecuidamos.jpg',
+  'allcovering': '/images/allcovering.jpg',
 }
 
 function ProjectDetail() {
