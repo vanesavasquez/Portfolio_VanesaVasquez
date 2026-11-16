@@ -14,10 +14,10 @@ import './Projects.css'
 // ]
 
 const webProjectsMeta = [
-  { slug: 'doloponce', image: '/images/fico-crm-mobile.png', size: 'large' },
-  { slug: 'selfbox', image: '/images/fico-crm-web.png', size: 'medium' },
-  { slug: 'mapfre-tecuidamos', image: '/images/sistema-de-diseno.png', size: 'feature', isFeature: true },
-  { slug: 'allcovering', image: '/images/transfer.png', size: 'wide' },
+  { slug: 'doloponce', image: '/images/doloponce.jpg', size: 'large' },
+  { slug: 'selfbox', image: '/images/selfbox.jpg', size: 'medium' },
+  { slug: 'mapfre-tecuidamos', image: '/images/mapfre-tecuidamos.jpg', size: 'feature', isFeature: true },
+  { slug: 'allcovering', image: '/images/allcovering.jpg', size: 'wide' },
 ]
 
 function Projects() {
