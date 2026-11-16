@@ -1,6 +1,8 @@
 /* ═══════════════════════════════════════════
-   FONT FACE — Against & Spinnaker
+   FONT FACE & IMPORTS — Syne, Against & Spinnaker
    ═══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap');
+
 @font-face {
   font-family: 'Against';
   src: url('/fonts/against regular.ttf') format('truetype');
@@ -31,8 +33,9 @@
 
   /* — Typography — */
   --font: 'Spinnaker', sans-serif;
-  --font-title: 'Against', sans-serif;
+  --font-title: 'Syne', sans-serif;
   --font-body: 'Spinnaker', sans-serif;
+  --font-brand: 'Against', sans-serif;
 
   /* — Fibonacci Spacing (base 4px) — */
   --sp-2xs: 4px;
